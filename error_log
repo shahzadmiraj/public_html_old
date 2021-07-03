@@ -1,0 +1,38 @@
+[26-Jun-2021 10:31:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_the_title() in /home/eventap1/public_html/wp-includes/functions.php:7869
+Stack trace:
+#0 /home/eventap1/public_html/wp-settings.php(111): require()
+#1 /home/eventap1/public_html/wp-config.php(91): require_once('/home/eventap1/...')
+#2 /home/eventap1/public_html/wp-load.php(37): require_once('/home/eventap1/...')
+#3 /home/eventap1/public_html/wp-blog-header.php(13): require_once('/home/eventap1/...')
+#4 /home/eventap1/public_html/index.php(17): require('/home/eventap1/...')
+#5 {main}
+  thrown in /home/eventap1/public_html/wp-includes/functions.php on line 7869
+[26-Jun-2021 10:31:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_the_title() in /home/eventap1/public_html/wp-includes/functions.php:7869
+Stack trace:
+#0 /home/eventap1/public_html/wp-settings.php(111): require()
+#1 /home/eventap1/public_html/wp-config.php(91): require_once('/home/eventap1/...')
+#2 /home/eventap1/public_html/wp-load.php(37): require_once('/home/eventap1/...')
+#3 /home/eventap1/public_html/wp-blog-header.php(13): require_once('/home/eventap1/...')
+#4 /home/eventap1/public_html/index.php(17): require('/home/eventap1/...')
+#5 {main}
+  thrown in /home/eventap1/public_html/wp-includes/functions.php on line 7869
+[26-Jun-2021 10:31:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_the_title() in /home/eventap1/public_html/wp-includes/functions.php:7869
+Stack trace:
+#0 /home/eventap1/public_html/wp-settings.php(111): require()
+#1 /home/eventap1/public_html/wp-config.php(91): require_once('/home/eventap1/...')
+#2 /home/eventap1/public_html/wp-load.php(37): require_once('/home/eventap1/...')
+#3 /home/eventap1/public_html/wp-blog-header.php(13): require_once('/home/eventap1/...')
+#4 /home/eventap1/public_html/index.php(17): require('/home/eventap1/...')
+#5 {main}
+  thrown in /home/eventap1/public_html/wp-includes/functions.php on line 7869
+[26-Jun-2021 10:31:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_the_title() in /home/eventap1/public_html/wp-includes/functions.php:7869
+Stack trace:
+#0 /home/eventap1/public_html/wp-settings.php(111): require()
+#1 /home/eventap1/public_html/wp-config.php(91): require_once('/home/eventap1/...')
+#2 /home/eventap1/public_html/wp-load.php(37): require_once('/home/eventap1/...')
+#3 /home/eventap1/public_html/wp-blog-header.php(13): require_once('/home/eventap1/...')
+#4 /home/eventap1/public_html/index.php(17): require('/home/eventap1/...')
+#5 {main}
+  thrown in /home/eventap1/public_html/wp-includes/functions.php on line 7869
+[26-Jun-2021 11:13:34 UTC] PHP Warning:  Use of undefined constant get_post_type - assumed 'get_post_type' (this will throw an Error in a future version of PHP) in /home/eventap1/public_html/wp-content/plugins/code-snippets/php/snippet-ops.php(469) : eval()'d code on line 3
+[26-Jun-2021 12:40:57 UTC] WordPress database error Table 'eventap1_wp691.wpsh_wpmailsmtp_tasks_meta' doesn't exist for query SHOW FULL COLUMNS FROM `wpsh_wpmailsmtp_tasks_meta` made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/plugins/wc-frontend-manager/templates/classic/wcfm-content.php'), include_once('/themes/martfury/header.php'), martfury_body_open, wp_body_open, do_action('wp_body_open'), WP_Hook->do_action, WP_Hook->apply_filters, wp_admin_bar_render, do_action_ref_array('admin_bar_menu'), WP_Hook->do_action, WP_Hook->apply_filters, WPMailSMTP\Admin\AdminBarMenu->register, WPMailSMTP\Admin\AdminBarMenu->has_notifications, WPMailSMTP\Admin\Notifications->get_count, WPMailSMTP\Admin\Notifications->get, WPMailSMTP\Tasks\Task->register, WPMailSMTP\Tasks\Meta->add, WPMailSMTP\Tasks\Meta->add_to_db

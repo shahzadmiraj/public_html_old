@@ -1,0 +1,12 @@
+Jun 26 2021 13:08:23
+{"type":2,"message":"POST Content-Length of 659458443 bytes exceeds the limit of 268435456 bytes","file":"Unknown","line":0}
+
+Jun 26 2021 13:49:02
+{"Number":2,"Message":"filesize(): stat failed for \/home\/eventap1\/public_html\/wp-content\/plugins\/all-in-one-wp-migration\/storage\/bpkhicms6284\/eventapna.com-20210619-121836-gtykqf.1.wpress","File":"\/home\/eventap1\/public_html\/wp-content\/plugins\/all-in-one-wp-migration\/functions.php","Line":229}
+
+Jun 26 2021 13:49:02
+{"Number":2,"Message":"Division by zero","File":"\/home\/eventap1\/public_html\/wp-content\/plugins\/all-in-one-wp-migration\/lib\/model\/import\/class-ai1wm-import-validate.php","Line":79}
+
+Jun 26 2021 13:49:02
+{"Number":2,"Message":"fopen(\/home\/eventap1\/public_html\/wp-content\/plugins\/all-in-one-wp-migration\/storage\/bpkhicms6284\/eventapna.com-20210619-121836-gtykqf.1.wpress): failed to open stream: No such file or directory","File":"\/home\/eventap1\/public_html\/wp-content\/plugins\/all-in-one-wp-migration\/lib\/vendor\/servmask\/archiver\/class-ai1wm-archiver.php","Line":98}
+

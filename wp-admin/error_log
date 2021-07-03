@@ -1,0 +1,37 @@
+[19-Jun-2021 22:41:27 Asia/Kolkata] PHP Warning:  POST Content-Length of 659458443 bytes exceeds the limit of 268435456 bytes in Unknown on line 0
+[19-Jun-2021 23:21:56 Asia/Kolkata] PHP Warning:  POST Content-Length of 659458443 bytes exceeds the limit of 268435456 bytes in Unknown on line 0
+[20-Jun-2021 01:41:33 Asia/Kolkata] PHP Warning:  POST Content-Length of 659458443 bytes exceeds the limit of 268435456 bytes in Unknown on line 0
+[20-Jun-2021 02:16:44 Asia/Kolkata] PHP Warning:  POST Content-Length of 659458443 bytes exceeds the limit of 268435456 bytes in Unknown on line 0
+[26-Jun-2021 10:31:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_the_title() in /home/eventap1/public_html/wp-includes/functions.php:7869
+Stack trace:
+#0 /home/eventap1/public_html/wp-settings.php(111): require()
+#1 /home/eventap1/public_html/wp-config.php(91): require_once('/home/eventap1/...')
+#2 /home/eventap1/public_html/wp-load.php(37): require_once('/home/eventap1/...')
+#3 /home/eventap1/public_html/wp-admin/admin-ajax.php(22): require_once('/home/eventap1/...')
+#4 {main}
+  thrown in /home/eventap1/public_html/wp-includes/functions.php on line 7869
+[26-Jun-2021 10:34:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function is_blog_installed() in /home/eventap1/public_html/wp-includes/load.php:727
+Stack trace:
+#0 /home/eventap1/public_html/wp-settings.php(159): wp_not_installed()
+#1 /home/eventap1/public_html/wp-config.php(91): require_once('/home/eventap1/...')
+#2 /home/eventap1/public_html/wp-load.php(37): require_once('/home/eventap1/...')
+#3 /home/eventap1/public_html/wp-admin/admin.php(34): require_once('/home/eventap1/...')
+#4 /home/eventap1/public_html/wp-admin/themes.php(10): require_once('/home/eventap1/...')
+#5 {main}
+  thrown in /home/eventap1/public_html/wp-includes/load.php on line 727
+[26-Jun-2021 10:34:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wp_suspend_cache_addition() in /home/eventap1/public_html/wp-includes/class-wp-object-cache.php:148
+Stack trace:
+#0 /home/eventap1/public_html/wp-includes/cache.php(33): WP_Object_Cache->add('alloptions', Array, 'options', 0)
+#1 /home/eventap1/public_html/wp-includes/option.php(259): wp_cache_add('alloptions', Array, 'options')
+#2 /home/eventap1/public_html/wp-includes/option.php(117): wp_load_alloptions()
+#3 /home/eventap1/public_html/wp-includes/l10n.php(63): get_option('WPLANG')
+#4 /home/eventap1/public_html/wp-includes/l10n.php(137): get_locale()
+#5 /home/eventap1/public_html/wp-includes/l10n.php(828): determine_locale()
+#6 /home/eventap1/public_html/wp-includes/class-wp-fatal-error-handler.php(46): load_default_textdomain()
+#7 [internal function]: WP_Fatal_Error_Handler->handle()
+#8 {main}
+  thrown in /home/eventap1/public_html/wp-includes/class-wp-object-cache.php on line 148
+[26-Jun-2021 11:12:44 UTC] PHP Warning:  Use of undefined constant get_post_type - assumed 'get_post_type' (this will throw an Error in a future version of PHP) in /home/eventap1/public_html/wp-content/plugins/code-snippets/php/snippet-ops.php(469) : eval()'d code on line 3
+[26-Jun-2021 18:38:20 Asia/Kolkata] PHP Warning:  POST Content-Length of 659458443 bytes exceeds the limit of 268435456 bytes in Unknown on line 0
+[26-Jun-2021 19:29:17 Asia/Kolkata] PHP Warning:  POST Content-Length of 659458310 bytes exceeds the limit of 268435456 bytes in Unknown on line 0
+[26-Jun-2021 19:29:43 Asia/Kolkata] PHP Warning:  POST Content-Length of 659458310 bytes exceeds the limit of 268435456 bytes in Unknown on line 0
