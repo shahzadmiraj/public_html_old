@@ -631,10 +631,10 @@ class WCFMd_Delivery_Time {
 			if( !empty(  $wcfmd_delvery_times ) ) {
 				foreach( $wcfmd_delvery_times as $vendor_id => $wcfmd_delvery_time ) {
 					if( wcfm_is_vendor() && ( $vendor_id != $WCFMmp->vendor_id ) ) continue;
-					$shipping_address .=  '<br/>hello<p class="wcfm_order_list_delivery_time"><i class="wcfmfa fa-clock" style="color:#ff1400"></i>&nbsp;&nbsp;<strong>';
+					$shipping_address .=  '<br/><p class="wcfm_order_list_delivery_time"><i class="wcfmfa fa-clock" style="color:#ff1400"></i>&nbsp;&nbsp;<strong>';
 					if( !wcfm_is_vendor() ) $shipping_address .= wcfm_get_vendor_store_name( $vendor_id ) . ' ';
 					$time_format = $this->get_time_format($vendor_id);
-					$shipping_address .= __( 'Delivery Time', 'wc-frontend-manager-delivery' ).':</strong> ' . $this->format_delivery_time_checkout_field($time_format, $wcfmd_delvery_time ) . json_encode($wcfmd_delvery_time).'</p>';
+					$shipping_address .= __( 'Delivery Time', 'wc-frontend-manager-delivery' ).':</strong> ' . $this->format_delivery_time_checkout_field($time_format, $wcfmd_delvery_time ).' </p>';
 				}
 			}
 		}

@@ -39,14 +39,13 @@ jQuery(document).ready(function($) {
 			collapsHeight += $(this).height() + 50;
 		}
 	}); 
-	
-	if( $("#associate_products").length > 0 ) {
+		if( $("#associate_products").length > 0 ) {
 		$("#associate_products").find('.associate_product').select2( $wcfm_simple_product_select_args );
 	}
 	
 	$('#associate_products').find('.add_multi_input_block').click(function() {
-	  $('#associate_products').find('.multi_input_block:last').find('.associate_product').val('').select2( $wcfm_simple_product_select_args );
-	  $('#associate_products').find('.multi_input_block:last').find('.associate_product_variation').html('').addClass('wcfm_ele_hide');
+		$('#associate_products').find('.multi_input_block:last').find('.associate_product').val('').select2( $wcfm_simple_product_select_args );
+	  	$('#associate_products').find('.multi_input_block:last').find('.associate_product_variation').html('').addClass('wcfm_ele_hide');
 		$('#associate_products').find('.multi_input_block:last').find('.associate_product_variation_label').addClass('wcfm_ele_hide');
 		$('#associate_products').find('.multi_input_block:last').find('.associate_product_qty').val('1');
 		variationSelectProperty( $("#associate_products").find('.associate_product') );

@@ -83,7 +83,7 @@ foreach( $payment_gateways as $payment_gateway_key => $payment_gateway ) {
 	  
 	  <form method="POST" id="wcfm_orders_manage_form">
 			
-			<div class="wcfm-container">
+			<div class="wcfm-container ">
 				<div id="wcfm_orders_manage_expander" class="wcfm-content">
 		    
 					<table class="form-table">
@@ -139,6 +139,7 @@ foreach( $payment_gateways as $payment_gateway_key => $payment_gateway ) {
 									?>
 									<?php do_action( 'wcfm_orders_manage_after_products_list' ); ?>
 								</td>
+								
 							</tr>
 						</tbody>
 					</table>
@@ -181,6 +182,9 @@ foreach( $payment_gateways as $payment_gateway_key => $payment_gateway ) {
 																																												)) );
 							?>
 							<?php do_action( 'wcfm_orders_manage_after_shipping' ); ?>
+
+
+							
 						</div>
 					</div>
 				<?php } ?>
