@@ -612,7 +612,9 @@ do_action( 'before_wcfm_orders_details', $order_id );
 			"payment_details"=> get_post_meta( $order->get_id(), '_transaction_id', true ),
 			"invoice_notes"=> get_post_meta( $order->get_id(), '_wcpdf_invoice_notes', true ),
 			"delivery_times"=> get_post_meta( $order->get_id(), '_wcfmd_delvery_times', true ),
-			"order_id" => $order->get_id()
+			"order_id" => $order->get_id(),
+			"payment_paid"=> get_post_meta( $order->get_id(), '_wcfm_om_payment_paid', true )
+
 		);
 
 		$delivery_time = "";
@@ -687,6 +689,11 @@ do_action( 'before_wcfm_orders_details', $order_id );
 		width: 26px;
 		stroke: #ca4a1f;
 	}
+	#orders_details_notes_expander .product-wrapper{
+		display: flex;
+    justify-content: space-between;
+    background: white;
+	}
 
 
 
@@ -694,9 +701,12 @@ do_action( 'before_wcfm_orders_details', $order_id );
 
 		<script>
 
-			
-// Submit Order
+
 jQuery(document).ready(function($) {
+$('#order_shipping_line_items .shipping:first-child h2').html(' Shipping / Extra change Item(s)');
+
+var shippingFooter =jQuery('.wc-order-totals tr:nth-child(2) .label').html().replace("Shipping:","Shipping/Extra Charges");
+ $('.wc-order-totals tr:nth-child(2) .label').html(shippingFooter);
 
 if($('.wcfm_order_edit_request').length===0){
 	$('.wc-order-edit-line-item').remove();
@@ -1565,6 +1575,28 @@ $( document ).on( "click", ".delete-order-item", function(e) {
 							</td>
 						</tr>
 						<?php } ?>
+
+						<tr>
+							<th class="label"><?php _e( 'Paid Amount', 'wc-frontend-manager' ); ?>:</th>
+							<td width="1%"></td>
+							<td class="total">
+								<div class="view"><?php echo  wc_price( end($order_edit_array['payment_paid']), array( 'currency' => $order->get_currency() ) );
+								 ?></div>
+							</td>
+						</tr>
+
+						<tr>
+							<th class="label"><?php _e( 'Remaining Amount', 'wc-frontend-manager' ); ?>:</th>
+							<td width="1%"></td>
+							<td class="total">
+								<div class="view"><?php 
+									$remaining_amount =(float) $order->get_total() - (float) end($order_edit_array['payment_paid']); 
+									echo  wc_price( $remaining_amount, array( 'currency' => $order->get_currency() ) );
+									 ?>
+								</div>
+							</td>
+						</tr>
+
 				
 						<?php if( apply_filters( 'wcfm_order_details_refund_line_item', true ) && apply_filters( 'wcfm_order_details_refund_total', true ) ) { ?>
 							<?php if ( $order->get_total_refunded() ) : ?>

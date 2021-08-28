@@ -185,6 +185,8 @@ foreach( $payment_gateways as $payment_gateway_key => $payment_gateway ) {
 
 
 							
+
+
 						</div>
 					</div>
 				<?php } ?>

@@ -68,9 +68,35 @@ foreach ( $line_items as $item_id => $item ) {
 								  <?php 
 								  echo $product_item['name']; 
 								  do_action( 'woocommerce_order_item_meta_start', $item_id, new WC_Order_Item_Product( $item_id ), $order, false );
+
+
+
 									wc_display_item_meta( $item );
 									do_action( 'woocommerce_order_item_meta_end', $item_id, new WC_Order_Item_Product( $item_id ), $order, false );
 								  ?>
+
+	
+								  <script>
+								  jQuery(document).ready(function($) {
+								  	var payment_paid= '<?php echo (float) end(get_post_meta( $order->get_id(), '_wcfm_om_payment_paid', true ));?>';
+								  	$('#wcfm_om_discount').after('<div class="wcfm_clearfix"></div>'+
+										'<p class="wcfm-order_edit-form-paidAmount wcfm_popup_label">'+
+										'<strong for="wcfm-order_edit-form-paidAmount">Paid Amount</strong>'+
+										'</p><input type="number"  id="wcfm-order_edit-form-paidAmount" name="paidAmount" class="wcfm_popup_input" value="'+payment_paid+'">');
+
+									var $popup_width = '70%';
+									var $popup_height = '90%';
+								      if( $(window).width() <= 960 ) {
+								        $popup_width = '90%';
+								        $popup_height = '100%';
+								      }
+								      $.colorbox.resize({
+						                    width: $popup_width,
+						                    height: $popup_height
+						              });
+								  });
+
+								  </script>
 								</td>
 								
 								<td class="item_cost sortable no_mob" data-sort="float" style="text-align:center;"><?php echo wc_price( $product_item['cost'], array( 'currency' => $currency ) ); ?></td>
@@ -133,6 +159,7 @@ foreach ( $line_items as $item_id => $item ) {
 			<strong for="comment"><?php _e( 'Note to Customer', 'wc-frontend-manager-ultimate' ); ?></strong>
 		</p>
 		<textarea id="wcfm_om_comments" name="wcfm_om_comments" class="wcfm_popup_input wcfm_popup_textarea"></textarea>
+
 	
 		<div class="wcfm_clearfix"></div>
 		<div class="wcfm-message" tabindex="-1"></div>
