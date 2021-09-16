@@ -95,6 +95,7 @@ $shipping_tax = 0;
 		</td>
 		<td class="shop-info">
 		  <?php do_action( 'wcfm_store_invoice_vendor_info_before', $vendor_id ); ?>
+		  <h1>vendor_id :<?php echo $vendor_id ?></h1>
 		  <?php if( $wcfm_vendor_invoice_store ) { ?>
 			  <div class="vendor-shop-name"><h3><?php echo $store_name; ?></h3></div>
 			<?php } ?>

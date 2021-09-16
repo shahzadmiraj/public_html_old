@@ -57,20 +57,149 @@ $line_items_shipping = apply_filters( 'wcfm_valid_shipping_items', $line_items_s
 ?>
 <?php do_action( 'wcfm_pdf_invoice_before_document', $document_type, $document, $order ); ?>
 
+
+<?php
+//custom
+$post = get_post($order_id);
+$wcfm_vendor_invoice_options = get_option( 'wcfm_vendor_invoice_options', array() );
+$wcfm_vendor_invoice_active = isset( $wcfm_vendor_invoice_options['enable'] ) ? 'yes' : '';
+$wcfm_vendor_invoice_logo = isset( $wcfm_vendor_invoice_options['logo'] ) ? 'yes' : '';
+$wcfm_vendor_invoice_store = isset( $wcfm_vendor_invoice_options['store'] ) ? 'yes' : '';
+$wcfm_vendor_invoice_address = isset( $wcfm_vendor_invoice_options['address'] ) ? 'yes' : '';
+$wcfm_vendor_invoice_email = isset( $wcfm_vendor_invoice_options['email'] ) ? 'yes' : '';
+$wcfm_vendor_invoice_phone = isset( $wcfm_vendor_invoice_options['phone'] ) ? 'yes' : '';
+$wcfm_vendor_invoice_policies = isset( $wcfm_vendor_invoice_options['policies'] ) ? 'yes' : '';
+$wcfm_vendor_invoice_disclaimer = isset( $wcfm_vendor_invoice_options['disclaimer'] ) ? 'yes' : '';
+$wcfm_vendor_invoice_signature = isset( $wcfm_vendor_invoice_options['signature'] ) ? 'yes' : '';
+$wcfm_vendor_invoice_fields = isset( $wcfm_vendor_invoice_options['fields'] ) ? $wcfm_vendor_invoice_options['fields'] : array();
+$wcfm_vendor_invoice_data = (array) wcfm_get_user_meta( $vendor_id, 'wcfm_vendor_invoice_options', true );
+$wcfm_vendor_disclaimer = isset( $wcfm_vendor_invoice_data['disclaimer'] ) ? $wcfm_vendor_invoice_data['disclaimer'] : '';
+$wcfm_vendor_signature = isset( $wcfm_vendor_invoice_data['signature'] ) ? wcfm_get_attachment_url( $wcfm_vendor_invoice_data['signature'] ) : '';
+//custom
+
+//$vendor_id_use =$vendor_id;
+// $wcfm_store_invoices = get_post_meta( $order->get_id(), '_wcfm_store_invoices', true );
+// if( $wcfm_store_invoices  && is_array( $wcfm_store_invoices ) && !empty( $wcfm_store_invoices ) ) {
+// 		foreach( $wcfm_store_invoices as $vendor_id1 => $wcfm_store_invoice ) {
+// 		$vendor_id_use = $vendor_id;
+// 		}
+// }
+$wcfm_policy_options = wcfm_get_option( 'wcfm_policy_options', array() );
+
+
+$order_edit_array =array(
+	"payment_details"=> get_post_meta( $order->get_id(), '_transaction_id', true ),
+	"invoice_notes"=> nl2br( esc_html( $post->post_excerpt ) ),
+	"delivery_times"=> get_post_meta( $order->get_id(), '_wcfmd_delvery_times', true ),
+	"order_id" => $order->get_id(),
+	"payment_paid"=>(float) end(get_post_meta( $order->get_id(), '_wcfm_om_payment_paid', true )),
+	"current_order_status"=>apply_filters( 'wcfm_current_order_status', $order->get_status(), $order->get_id() )
+);
+
+$delivery_time = "";
+$delivery_date = "";
+$deliveryTimeFormat = '';
+if($order_edit_array['delivery_times']){
+	$wcfmd_delvery_times = $order_edit_array['delivery_times'];
+	$lastArrayString=end($wcfmd_delvery_times);
+	$timeStamp = end(explode('|', $lastArrayString));
+	$delivery_date = date('Y-m-d', $timeStamp);
+	$delivery_time = date('h:m', $timeStamp);
+	$deliveryTimeFormat = date('l jS, F Y h:i A', $timeStamp);
+}
+
+$user_id = apply_filters( 'wcfm_current_vendor_id', get_current_user_id() );
+$user        = get_user_by( 'id', $user_id );
+$current_time_Pk = new DateTime("now", new DateTimeZone('Asia/Karachi') );
+$vendor_id_order = $vendor_id;
+
+$vendor_id_get_from_invoice=0;
+//invoice show current vendor id exactly :work fine
+$wcfm_store_invoices = get_post_meta( $order->get_id(), '_wcfm_store_invoices', true );
+if( $wcfm_store_invoices  && is_array( $wcfm_store_invoices ) && !empty( $wcfm_store_invoices ))
+{
+	foreach( $wcfm_store_invoices as $vendor_id_orignail => $wcfm_store_invoice ) {
+		$vendor_id_get_from_invoice =$vendor_id_orignail;
+		}
+}
+$wcfm_vendor_invoice_data = (array) wcfm_get_user_meta( $vendor_id_get_from_invoice, 'wcfm_vendor_invoice_options', true );
+$wcfm_vendor_signature = isset( $wcfm_vendor_invoice_data['signature'] ) ? wcfm_get_attachment_url( $wcfm_vendor_invoice_data['signature'] ) : '';
+
+ ?>
+
+
+
+
+
 <table class="head container">
 	<tr>
-		<td class="header">
+		<td class="header" style="width: 20%;">
 		<?php
+
+		$store_name = wcfm_get_vendor_store_name( $vendor_id );
+		$store_logo = wcfm_get_vendor_store_logo_by_vendor( $vendor_id );
 		if( $document->has_header_logo() ) {
 			$document->header_logo();
 		} else {
-			echo apply_filters( 'wcfm_pdf_invoice_invoice_title', __( 'Invoice', 'wc-frontend-manager-ultimate' ) );
+			//echo apply_filters( 'wcfm_pdf_invoice_invoice_title', __( 'Invoice', 'wc-frontend-manager-ultimate' ) );
+
+			if( $store_logo && $wcfm_vendor_invoice_logo ) {
+				printf('<img style="width:100px;" src="%1$s" alt="%2$s" />', $store_logo, $store_name );
+			}
 		}
 		?>
 		</td>
-		<td class="shop-info">
-			<div class="shop-name"><h3><?php $document->shop_name(); ?></h3></div>
-			<div class="shop-address"><?php $document->shop_address(); ?></div>
+
+
+
+		<td class="order-data" style="background-color: #f8f8f8;">
+			<table >
+				<?php do_action( 'wcfm_pdf_invoice_before_order_data', $document_type, $order ); ?>
+				<tr>
+					<th style="font-weight: bold; font-size: 200;">
+						<h1>Invoice</h1>
+					</th>
+				</tr>
+				<?php if( wcfm_is_vendor( $vendor_id ) ) { ?>
+					<tr class="invoice-number">
+						<th><?php _e( 'Invoice Number:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
+						<td><?php echo __( 'commission-invoice', 'wc-frontend-manager-ultimate' ) . '-'.$vendor_id.'-'.$order->get_order_number(); ?></td>
+					</tr>
+				<?php } ?>
+				<tr class="order-number">
+					<th><?php _e( 'Order Number:', 'wc-frontend-manager-ultimate' ); ?></th>
+					<td>#<?php echo $order->get_order_number(); ?></td>
+				</tr>
+				<tr class="order-status">
+					<th><?php _e( 'Order Status:', 'wc-frontend-manager-ultimate' ); ?></th>
+					<td><?php echo $order_edit_array['current_order_status']; ?></td>
+				</tr>
+				<tr class="payment-method">
+					<th><?php _e( 'Payment Method:', 'wc-frontend-manager-ultimate' ); ?></th>
+					<td><?php printf( __( '%s', 'wc-frontend-manager-ultimate' ), ( isset( $payment_gateways[ $payment_method ] ) ? esc_html( $payment_gateways[ $payment_method ]->get_title() ) : esc_html( $payment_method ) ) ); ?></td>
+				</tr>
+				<tr class="order-date">
+					<th><?php _e( 'Booking Time:', 'wc-frontend-manager-ultimate' ); ?></th>
+					<td><?php echo date_i18n( wc_date_format(), strtotime( $post->post_date ) ); ?> @<?php echo date_i18n( wc_time_format(), strtotime( $post->post_date ) ); ?></td>
+				</tr>
+				<?php if( $deliveryTimeFormat != "" ){ ?>
+				<tr class="order-delivery-date" >
+					<th>Delivery Time:</th>
+					<td><?php echo $deliveryTimeFormat; ?></td>
+				</tr>
+				<?php } ?>
+				<tr class="order-printed">
+					<th><?php _e( 'Printed:', 'wc-frontend-manager-ultimate' ); ?></th>
+					<td><?php echo $current_time_Pk->format('l jS, F Y h:i A'); ?></td>
+				</tr>
+				<tr class="order-printed_by">
+					<th><?php _e( 'Printed by:', 'wc-frontend-manager-ultimate' ); ?></th>
+					<td><?php echo $user->display_name; ?></td>
+				</tr>
+
+				<?php do_action( 'wpo_wcpdf_after_order_data', $document_type, $order ); ?>
+				<?php do_action( 'wcfm_pdf_invoice_after_order_data', $document_type, $order ); ?>
+			</table>			
 		</td>
 	</tr>
 </table>
@@ -125,31 +254,25 @@ if( $document->has_header_logo() ) {
 				?>
 			<?php } ?>
 		</td>
-		<td class="order-data">
-			<table>
-				<?php do_action( 'wcfm_pdf_invoice_before_order_data', $document_type, $order ); ?>
-				<?php if( wcfm_is_vendor( $vendor_id ) ) { ?>
-					<tr class="invoice-number">
-						<th><?php _e( 'Invoice Number:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
-						<td><?php echo __( 'commission-invoice', 'wc-frontend-manager-ultimate' ) . '-'.$vendor_id.'-'.$order->get_order_number(); ?></td>
-					</tr>
-				<?php } ?>
-				<tr class="order-number">
-					<th><?php _e( 'Order Number:', 'wc-frontend-manager-ultimate' ); ?></th>
-					<td>#<?php echo $order->get_order_number(); ?></td>
-				</tr>
-				<tr class="order-date">
-					<th><?php _e( 'Order Date:', 'wc-frontend-manager-ultimate' ); ?></th>
-					<td><?php echo date_i18n( wc_date_format(), strtotime( $post->post_date ) ); ?> @<?php echo date_i18n( wc_time_format(), strtotime( $post->post_date ) ); ?></td>
-				</tr>
-				<tr class="payment-method">
-					<th><?php _e( 'Payment Method:', 'wc-frontend-manager-ultimate' ); ?></th>
-					<td><?php printf( __( '%s', 'wc-frontend-manager-ultimate' ), ( isset( $payment_gateways[ $payment_method ] ) ? esc_html( $payment_gateways[ $payment_method ]->get_title() ) : esc_html( $payment_method ) ) ); ?></td>
-				</tr>
-				<?php do_action( 'wpo_wcpdf_after_order_data', $document_type, $order ); ?>
-				<?php do_action( 'wcfm_pdf_invoice_after_order_data', $document_type, $order ); ?>
-			</table>			
+		
+
+		<td class="shop-info" >
+			<h3><?php _e( 'Store :', 'wc-frontend-manager-ultimate' ); ?></h3>
+			<!-- <div class="shop-name"><h3><?php $document->shop_name(); ?></h3></div>
+			<div class="shop-address"><?php $document->shop_address(); ?></div>
+ -->
+
+		  	<div class="vendor-shop-name"><?php echo wcfm_get_vendor_store_name( $vendor_id_get_from_invoice ); ?></div>
+		  	<div class="vendor-shop-address"><?php echo wcfm_get_vendor_store_address_by_vendor( $vendor_id_get_from_invoice ); ?></div>
+		  	<div class="vendor-shop-email"><?php echo wcfm_get_vendor_store_email_by_vendor( $vendor_id_get_from_invoice ); ?></div>
+		  	<div class="vendor-shop-phone"><?php echo wcfm_get_vendor_store_phone_by_vendor( $vendor_id_get_from_invoice ); ?></div>
+
 		</td>
+
+
+
+
+
 	</tr>
 </table>
 
@@ -161,6 +284,7 @@ if( $document->has_header_logo() ) {
 		<tr>
 			<td class="product" colspan="2"><?php _e('Product', 'wc-frontend-manager-ultimate' ); ?></td>
 			<td class="price"><?php _e('Price', 'wc-frontend-manager-ultimate' ); ?></td>
+			<td class="quantity"><?php _e('Quantity', 'wc-frontend-manager-ultimate' ); ?></td>
 			<?php if( $is_wcfm_order_details_line_total_head = apply_filters( 'wcfm_order_details_line_total_head', true ) ) { ?>
 				<td class="line_cost"><?php _e( 'Total', 'wc-frontend-manager-ultimate' ); ?></td>
 			<?php } ?>
@@ -219,11 +343,10 @@ if( $document->has_header_logo() ) {
 			  <?php
 					if ( $item->get_total() ) {
 						echo wc_price( $order->get_item_subtotal( $item, false, true ), array( 'currency' => $order->get_currency() ) );
-						echo '<small class="times">&times;</small> ' . ( $item->get_quantity() ? esc_html( $item->get_quantity() ) : '1' );
 	
-						if ( $item->get_subtotal() != $item->get_total() ) {
-							echo '<small class="discount">-' . wc_price( wc_format_decimal( $order->get_item_subtotal( $item, false, false ) - $order->get_item_total( $item, false, false ), '' ), array( 'currency' => $order->get_currency() ) ) . '</small>';
-						}
+						// if ( $item->get_subtotal() != $item->get_total() ) {
+						// 	echo '<small class="discount">-' . wc_price( wc_format_decimal( $order->get_item_subtotal( $item, false, false ) - $order->get_item_total( $item, false, false ), '' ), array( 'currency' => $order->get_currency() ) ) . '</small>';
+						// }
 					}
 				?>
 				
@@ -233,6 +356,11 @@ if( $document->has_header_logo() ) {
 						}
 					?>
 			</td>
+			<td class="price quantity">
+			  <?php
+					echo ( $item->get_quantity() ? esc_html( $item->get_quantity() ) : '1' );
+				?>	
+			</td>
 			<?php if( $is_wcfm_order_details_line_total = apply_filters( 'wcfm_order_details_line_total', true ) ) { ?>
 				<td class="line_cost" data-sort-value="<?php echo esc_attr( ( $item->get_total() ) ? $item->get_total() : '' ); ?>">
 					<div class="view">
@@ -241,9 +369,9 @@ if( $document->has_header_logo() ) {
 								echo wc_price( $item->get_subtotal(), array( 'currency' => $order->get_currency() ) );
 							}
 			
-							if ( $item->get_subtotal() !== $item->get_total() ) {
-								echo '<small class="discount">-' . wc_price( wc_format_decimal( $item->get_subtotal() - $item->get_total(), '' ), array( 'currency' => $order->get_currency() ) ) . '</small>';
-							}
+							// if ( $item->get_subtotal() !== $item->get_total() ) {
+							// 	echo '<small class="discount">-' . wc_price( wc_format_decimal( $item->get_subtotal() - $item->get_total(), '' ), array( 'currency' => $order->get_currency() ) ) . '</small>';
+							// }
 			
 							if ( $refunded = $order->get_total_refunded_for_item( $item_id ) ) {
 								echo '<small class="refunded">-' . wc_price( $refunded, array( 'currency' => $order->get_currency() ) ) . '</small>';
@@ -305,14 +433,17 @@ if( $document->has_header_logo() ) {
 						<?php echo ! empty( $item->get_name() ) ? wc_clean( $item->get_name() ) : __( 'Shipping', 'wc-frontend-manager-ultimate' ); ?>
 					</div>
 			
-					<div class="view">
+					<!-- <div class="view">
 					  <?php do_action( 'woocommerce_before_order_itemmeta', $item_id, $item, null ) ?>
 						<?php wc_display_item_meta( $item ); ?>
 						<?php do_action( 'woocommerce_after_order_itemmeta', $item_id, $item, null ) ?>
-					</div>
+					</div> -->
 				</td>
 			
 				<?php do_action( 'woocommerce_admin_order_item_values', null, $item, absint( $item_id ) ); ?>
+				<td>
+					<?php wc_display_item_meta( $item ); ?>
+				</td>
 			
 				<td class="line_cost">
 					<div class="view">
@@ -482,9 +613,10 @@ if( $document->has_header_logo() ) {
 						<?php //$document->shipping_notes(); ?>
 					<?php endif; ?>
 					<?php do_action( 'wcfm_pdf_invoice_after_customer_notes', $document_type, $order ); ?>
-				</div>				
+					<?php echo $order_edit_array['invoice_notes']; ?>
+				</div>	
+
 			</td>
-		  
 			<td class="no-borders" style="width:40%">
 				<table class="totals">
 					<tfoot>
@@ -501,7 +633,7 @@ if( $document->has_header_logo() ) {
 				
 						<?php if( apply_filters( 'wcfm_order_details_shipping_line_item', true ) && apply_filters( 'wcfm_order_details_shipping_total', true ) && $order->get_formatted_shipping_address() ) { ?>
 							<tr>
-								<td class="label description" colspan="2" style="text-align:right;"><span class="img_tip" data-tip="<?php _e( 'This is the shipping and handling total costs for the order.', 'wc-frontend-manager-ultimate' ) ; ?>"></span> <?php _e( 'Shipping', 'wc-frontend-manager-ultimate' ); ?>:</td>
+								<td class="label description" colspan="2" style="text-align:right;"><span class="img_tip" data-tip="<?php _e( 'This is the shipping and handling total costs for the order.', 'wc-frontend-manager-ultimate' ) ; ?>"></span> <?php _e( 'Shipping/Extra charge', 'wc-frontend-manager-ultimate' ); ?>:</td>
 								<td class="total price" style="text-align:center;"><?php
 									if ( ( $refunded = $order->get_total_shipping_refunded() ) > 0 ) {
 										echo '<del>' . strip_tags( wc_price( $order->get_total_shipping(), array( 'currency' => $order->get_currency() ) ) ) . '</del> <ins>' . wc_price( $order->get_total_shipping() - $refunded, array( 'currency' => $order->get_currency() ) ) . '</ins>';
@@ -541,6 +673,19 @@ if( $document->has_header_logo() ) {
 							</td>
 						</tr>
 						<?php } ?>
+
+						<tr>
+							 <td class="label"  colspan="2" style="text-align:right;"><?php _e( "Paid Amount", "wc-frontend-manager" ); ?>:</td>
+							 <td class="total" style="text-align:center;">
+							  	<div class="view"><?php echo  wc_price( end($order_edit_array["payment_paid"]), array( "currency" => $order->get_currency() ) ); ?></div> 
+							  </td>
+					 	</tr> 
+					 	<tr> 
+					 		<td class="label"  colspan="2" style="text-align:right;"><?php _e( "Remaining Amount", 'wc-frontend-manager' ); ?>:</td>
+					 	 	<td class="total" style="text-align:center;"> 
+					 	 		<div class="view"><?php $remaining_amount =(float) $order->get_total() - (float) end($order_edit_array["payment_paid"]); echo  wc_price( $remaining_amount, array( "currency" => $order->get_currency() ) ); ?> </div> 
+					 	 	</td>
+					 	</tr>
 				
 						<?php do_action( 'wcfm_order_totals_after_total', $order->get_id() ); ?>
 				
@@ -557,8 +702,38 @@ if( $document->has_header_logo() ) {
 				</table>
 			</td>
 		</tr>
+		<tr>
+			<td>
+				<h3>Policies/note</h3>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="5" style="line-height: 0.5"><?php echo $wcfm_policy_options['shipping_policy']; ?></td>
+		</tr>
+		<tr>
+			<td colspan="5" style="line-height: 0.5"><?php echo $wcfm_policy_options['refund_policy']; ?></td>
+		</tr>
+		<tr>
+			<td colspan="5" ><?php echo $wcfm_policy_options['cancellation_policy']; ?></td>
+		</tr>
+
 	</tbody>
 </table>
+<?php
+if( $wcfm_vendor_invoice_signature && $wcfm_vendor_signature ) {
+	?>
+	<br/><br/>
+	<table width="100%" style="width:100%;">
+	  <tbody>
+			<tr>
+				<td><div style="width:100%;text-align: right;"><img style="max-width: 150px;" src="<?php echo $wcfm_vendor_signature; ?>" /></div></td>
+			</tr>
+		</tbody>
+	</table>
+	<br/><br/>
+	<?php
+}
+?>
 
 <?php do_action( 'wcfm_pdf_invoice_after_order_details', $document_type, $order ); ?>
 

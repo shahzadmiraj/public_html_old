@@ -78,7 +78,9 @@ $table_prefix = 'wpsh_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+//define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
 
 /* That's all, stop editing! Happy publishing. */
 

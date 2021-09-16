@@ -56,10 +56,40 @@ $admin_fee_mode = apply_filters( 'wcfm_is_admin_fee_mode', false );
 																											"dropdown_vendor" => array( 'type' => 'select', 'options' => $vendor_arr, 'value' => $order_vendor, 'attributes' => array( 'style' => 'width: 150px;' ) )
 																											 ) );
 					}
+
+
 					?>
+
+
 					<?php do_action( 'wcfm_after_orders_filter_wrap' ); ?>
+			
+					<input id="daterange" type="text" name="daterange" placeholder="Delivery Time" autocomplete="off" />
+					<style>
+						#data_filter_applied ul,#data_filter_applied li{
+							display: inline-block;
+						}
+						#data_filter_applied li{
+							padding: 10px 20px;
+							background: #f9f9f9;;
+						}
+						#data_filter_applied .fa-filter-wrapper{
+							padding: 0px !important;
+						}
+						#data_filter_applied .fa-filter{
+							background: #17a2b8;
+					    color: #ffffff;
+					    padding: 16px 18px;
+						}
+						#data_filter_applied .to-seperator-delivery{
+							text-decoration: underline;
+							color: #17a2b8;
+							font-size: 15px;
+						}
+					</style>
+					<div id="data_filter_applied"></div>
 				</div>
 				<?php
+				
 			}
 			
 			do_action( 'before_wcfm_orders' );

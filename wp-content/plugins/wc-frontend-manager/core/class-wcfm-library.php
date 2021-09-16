@@ -275,7 +275,7 @@ class WCFM_Library {
 	    	$wcfm_screen_manager_hidden_data    = apply_filters( 'wcfm_screen_manager_hidden_columns', $wcfm_screen_manager_hidden_data );
 	    	wp_localize_script( 'wcfm_orders_js', 'wcfm_orders_screen_manage_hidden', $wcfm_screen_manager_hidden_data );
 	    	
-	    	wp_localize_script( 'wcfm_orders_js', 'wcfm_orders_auto_refresher', array( 'is_allow' => apply_filters( 'wcfm_orders_is_allow_auto_refresher', false ), 'duration' => apply_filters( 'wcfm_order_auto_refresher_duration', 60000 ) ) );
+	    	wp_localize_script( 'wcfm_orders_js', 'wcfm_orders_auto_refresher', array( 'is_allow' => apply_filters( 'wcfm_orders_is_allow_auto_refresher', true ), 'duration' => apply_filters( 'wcfm_order_auto_refresher_duration', 60000 ) ) );
       break;
       
       case 'wcfm-orders-details':

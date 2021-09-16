@@ -34,15 +34,14 @@ class WCFM_Orders_Controller {
 							'order'            => 'DESC',
 							'include'          => '',
 							'exclude'          => '',
-							'meta_key'         => '',
-							'meta_value'       => '',
 							'post_type'        => 'shop_order',
 							'post_mime_type'   => '',
 							'post_parent'      => '',
 							//'author'	   => get_current_user_id(),
 							'post_status'      => 'any',
-							'suppress_filters' => 0 
-						);
+							'suppress_filters' => 0 ,
+													);
+
 		if( isset( $_POST['search'] ) && !empty( $_POST['search']['value'] )) {
 			$wc_order_ids = wc_order_search( $_POST['search']['value'] );
 			if( !empty( $wc_order_ids ) ) {
@@ -95,7 +94,6 @@ class WCFM_Orders_Controller {
 				$filtering_on = true;
 			}
 		}
-		
 		if ( ! empty( $_POST['delivery_boy'] ) ) {
 			$args['meta_query'] = array(
 				'relation' => 'AND',
@@ -105,6 +103,55 @@ class WCFM_Orders_Controller {
 					'compare' => 'LIKE'
 				)
 			);
+			$filtering_on = true;
+		}
+		if(isset($_POST['delivery_date_range'])){
+	
+			if(! empty( $_POST['delivery_date_range'] )){
+				$delivery_date_range_string = $_POST['delivery_date_range'];
+				$delivery_date_range_array = explode(" to ",$delivery_date_range_string);
+				$User_start_time = strtotime($delivery_date_range_array[0]);
+				$User_end_time = strtotime($delivery_date_range_array[1]);
+
+
+				if ( empty( $_POST['delivery_boy'] ) ) {
+
+					$args['meta_query'] = array(
+													'relation' => 'AND',
+											       array(
+											          'key' => '_wcfmd_delvery_times_single',
+											          'value'   => $User_end_time,
+												       'compare' => '<=',
+											       ),
+											       array(
+											          'key' => '_wcfmd_delvery_times_single',
+											          'value'   => $User_start_time,
+												      'compare' => '>=',
+											       )
+											   );
+				}else{
+
+					$args['meta_query'] = array(
+													'relation' => 'AND',
+											       array(
+											          'key' => '_wcfmd_delvery_times_single',
+											          'value'   => $User_end_time,
+												       'compare' => '<=',
+											       ),
+											       array(
+											          'key' => '_wcfmd_delvery_times_single',
+											          'value'   => $User_start_time,
+												      'compare' => '>=',
+											       ),
+											       array(
+														'key'     => '_wcfm_delivery_boys',
+														'value'   => wc_clean($_POST['delivery_boy']),
+														'compare' => 'LIKE'
+													)
+
+											   );
+				}
+			}
 			$filtering_on = true;
 		}
 		

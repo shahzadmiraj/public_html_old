@@ -114,6 +114,119 @@ do_action( 'before_wcfm_orders_details', $order_id );
 
 <div class="collapse wcfm-collapse" id="wcfm_order_details">
 
+	<?php 
+	 $delvery_times_single = get_post_meta( $order->get_id(), '_wcfmd_delvery_times_single', true );
+	 echo '<h1>time:'.$delvery_times_single.'</h1>';
+	// $payment_paid_single = get_post_meta( $order->get_id(), '_wcfm_om_payment_paid_single', true );
+	// 		echo '<h1>delvery_times_single='.$delvery_times_single.':payment_paid_single'.$payment_paid_single.'</h1>';
+				$args = array(
+							'posts_per_page'   => -1,
+							'offset'           => 0,
+							'category'         => '',
+							'category_name'    => '',
+							'orderby'          => 'date',
+							'order'            => 'DESC',
+							'include'          => '',
+							'exclude'          => '',
+							'meta_key'         => '',
+							'meta_value'       => '',
+							'post_type'        => 'shop_order',
+							'post_mime_type'   => '',
+							'post_parent'      => '',
+							//'author'	   => get_current_user_id(),
+							'post_status'      => 'any',
+							'suppress_filters' => 0 ,
+						);
+
+				//$database_time=strtotime('2021-09-11 11:23:20');
+
+$User_start_time=strtotime('2021-09-11 11:23:19');
+
+$User_end_time=strtotime('2021-09-14 11:23:19');
+echo "database_time ". date("Y-m-d h:i:sa",$delvery_times_single)."<br>";
+echo "User_start_time ". date("Y-m-d h:i:sa",$User_start_time)."<br>";
+echo "User_end_time ". date("Y-m-d h:i:sa",$User_end_time)."<br>";
+if($User_start_time<=$delvery_times_single && $delvery_times_single<=$User_end_time)
+{
+echo "trueee";
+}			
+$args['meta_query'] = array(
+												'relation' => 'AND',
+										       array(
+										          'key' => '_wcfmd_delvery_times_single',
+										          'value'   => $User_end_time,
+											        'compare' => '<=',
+										       ),
+										       array(
+										          'key' => '_wcfmd_delvery_times_single',
+										          'value'   => $User_start_time,
+											        'compare' => '>=',
+										       )
+												);
+
+			$args = apply_filters( 'wcfm_orders_args', $args );		
+		 //		echo '<pre>'; print_r($args); echo '</pre>';
+		$wcfm_orders_array = get_posts( $args );
+		//echo '<pre>'; print_r($wcfm_orders_array); echo '</pre>';
+		if(!empty($wcfm_orders_array)) {
+			foreach($wcfm_orders_array as $wcfm_orders_single) {
+				$the_order = wc_get_order( $wcfm_orders_single );
+				 $dateGet = date("Y-m-d h:i:sa", get_post_meta( $the_order->get_id(), '_wcfmd_delvery_times_single', true ));
+					echo '<br> get'.$dateGet;
+				}
+		}
+		else{
+			echo "<h1>ccccc</h1>";
+		}
+		//echo '<pre>'; print_r($wcfm_orders_array); echo '</pre>';
+//$results = $wpdb->get_results( "select post_id, meta_key from $wpdb->postmeta where (meta_value = 'First Name eee Billing') AND (meta_key = '_billing_first_name') ", ARRAY_A );
+		//echo '<pre>'; print_r($results); echo '</pre>';
+
+
+		
+
+
+	?>
+
+<script>
+	
+
+	jQuery(document).ready(function($) {
+			  $('input[name="daterange"]').daterangepicker({
+			    opens: 'left',
+			    autoApply:true,
+			    timePicker: true,
+			    autoUpdateInput: true,
+			    timePicker24Hour: true,
+			    startDate: moment().startOf('hour'),
+			    endDate: moment().startOf('hour').add(32, 'hour'),
+			    locale: {
+			      format: 'YYYY-MM-DD hh:mm',
+			      cancelLabel: 'Clear'
+			    },
+			     ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+			  }, function(start, end, label) {
+			    console.log("A new date selection was made: " + start.format('YYYY-MM-DD hh:mm') + ' to ' + end.format('YYYY-MM-DD hh:mm'));
+			  });
+			  $('#daterange').on('cancel.daterangepicker', function(ev, picker) {
+				  //do something, like clearing an input
+				  $('#daterange').val('');
+				});
+				$('#daterange').on('apply.daterangepicker', function(ev, picker) {
+			      $(this).val(picker.startDate.format('YYYY-MM-DD hh:mm') + ' - ' + picker.endDate.format('YYYY-MM-DD hh:mm'));
+			  });
+	});
+
+
+	</script>
+<div>
   <div class="wcfm-page-headig">
 		<span class="wcfmfa fa-cart-arrow-down"></span>
 		<span class="wcfm-page-heading-text"><?php _e( 'Order Details', 'wc-frontend-manager' ); ?></span>
@@ -425,6 +538,9 @@ do_action( 'before_wcfm_orders_details', $order_id );
 												$sold_by_text = $WCFMmp->wcfmmp_vendor->sold_by_label( absint($vendor_id) );
 											}
 											echo '<a id="wcfm-store-invoice-' . $vendor_id . '" target="_blank" class="add_new_wcfm_ele_dashboard text_tip" style="float:left!important;color:#ffffff!important;margin-right:10px;" href="' . $invoice_path . '" data-tip="' . __('Download Store Invoice', 'wcfm-gosend') . '"><span class="wacfmfa fa-currence">' .get_woocommerce_currency_symbol(). '</span><span class="">' . apply_filters( 'wcfm_store_invoice_download_label', wcfm_get_vendor_store_name( absint($vendor_id) ) . ' ' . $sold_by_text . ' ' . __( 'Invoice', 'wc-frontend-manager-ultimate'), $order->get_id(), $vendor_id ) . '</span></a>';
+
+											
+											
 										}
 									}
 								}
@@ -446,607 +562,18 @@ do_action( 'before_wcfm_orders_details', $order_id );
 		//start custom label
 		do_action( 'before_wcfm_order_items', $order_id ); 
 
-		$billing_address_array =array(
-			"billing_first_name"=> get_post_meta( $order->get_id(), '_billing_first_name', true ),
-			"billing_last_name"=> get_post_meta( $order->get_id(), '_billing_last_name', true ),
-			"billing_phone"=> get_post_meta( $order->get_id(), '_billing_phone', true ),
-			"billing_address_1"=> get_post_meta( $order->get_id(), '_billing_address_1', true ),
-			"billing_address_2"=> get_post_meta( $order->get_id(), '_billing_address_2', true ),
-			"billing_country"=> get_post_meta( $order->get_id(), '_billing_country', true ),
-			"billing_city"=> get_post_meta( $order->get_id(), '_billing_city', true ),
-			"billing_state"=> get_post_meta( $order->get_id(), '_billing_state', true ),
-			"billing_postcode"=> get_post_meta( $order->get_id(), '_billing_postcode', true ),
-			"billing_email"=> get_post_meta( $order->get_id(), '_billing_email', true ),
-			"order_id" => $order->get_id()
-
-		);
-
+		
 
 		?>
 
 
-		<div class="wcfm-clearfix"></div><br/>
-		<div id="wcfm-edit-billing-info-popup" style="display:none;">
-			<div class="page_collapsible">
-								Edit Billing Detail
-			</div>
-			<form method="post" id="wcfm_orders_manage_billing_address_form">
-				<div class="">
-						<input name="billing_order_id" type="hidden"
-						value="<?php echo  $billing_address_array['order_id']; ?>" >	
-
-					<div class="wcfm_popup_wrapper">
-						<span class="wcfm_popup_label"><strong>First name</strong></span>
-						<input name="billing_first_name" type="text" class="wcfm_popup_input" id="billing_first_name" placeholder="First name" value="<?php echo $billing_address_array['billing_first_name'];  ?>" >	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>Last name</strong></span>
-						<input name="billing_last_name" type="text" class="wcfm_popup_input" id="billing_last_name" placeholder="Last name" value="<?php echo $billing_address_array['billing_last_name'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>Phone</strong></span>
-						<input name="billing_phone" type="text" class="wcfm_popup_input" id="billing_phone" placeholder="Phone" value="<?php echo $billing_address_array['billing_phone'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>Address 1</strong></span>
-						<input name="billing_address_1" type="text" class="wcfm_popup_input" id="billing_address_1" placeholder="Address 1" value="<?php echo $billing_address_array['billing_address_1'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>Address 2</strong></span>
-						<input name="billing_address_2" type="text" class="wcfm_popup_input" id="billing_address_2" placeholder="Address 2" value="<?php echo $billing_address_array['billing_address_2'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>Country</strong></span>
-						<input readonly name="billing_country" type="text" class="wcfm_popup_input" id="billing_country" placeholder="Country" value="<?php echo $billing_address_array['billing_country'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-
-						<span class="wcfm_popup_label"><strong>City</strong></span>
-						<input name="billing_city" type="text" class="wcfm_popup_input" id="billing_city" placeholder="City" value="<?php echo $billing_address_array['billing_city'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>State</strong></span>
-						<input name="billing_state" type="text" class="wcfm_popup_input" id="billing_state" placeholder="State" value="<?php echo $billing_address_array['billing_state'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>Postcode</strong></span>
-						<input name="billing_postcode" type="text" class="wcfm_popup_input" id="billing_postcode" placeholder="Postcode" value="<?php echo $billing_address_array['billing_postcode'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<button name="wcfm_orders_manage_billing_address_button" value="submit" id="wcfm_orders_manage_billing_address_button" class="wcfm_popup_button ">Submit</button>
-						<div class="wcfm_clearfix"></div>
-
-
-					</div>
-
-				</div>
-			</form>
-	</div>
-
-
-	<?php 
-
-		//start shipping detail
-
-		$shipping_address_array =array(
-			"shipping_first_name"=> get_post_meta( $order->get_id(), '_shipping_first_name', true ),
-			"shipping_last_name"=> get_post_meta( $order->get_id(), '_shipping_last_name', true ),
-			"shipping_phone"=> get_post_meta( $order->get_id(), '_shipping_phone', true ),
-			"shipping_address_1"=> get_post_meta( $order->get_id(), '_shipping_address_1', true ),
-			"shipping_address_2"=> get_post_meta( $order->get_id(), '_shipping_address_2', true ),
-			"shipping_country"=> get_post_meta( $order->get_id(), '_shipping_country', true ),
-			"shipping_city"=> get_post_meta( $order->get_id(), '_shipping_city', true ),
-			"shipping_state"=> get_post_meta( $order->get_id(), '_shipping_state', true ),
-			"shipping_postcode"=> get_post_meta( $order->get_id(), '_shipping_postcode', true ),
-			"shipping_email"=> get_post_meta( $order->get_id(), '_shipping_email', true ),
-			"order_id" => $order->get_id()
-
-		);
-
-
-		?>
-
-
-		<div class="wcfm-clearfix"></div><br/>
-		<div id="wcfm-edit-shipping-info-popup" style="display:none;">
-			<div class="page_collapsible">
-								Edit Shipping Detail
-			</div>
-			<form method="post" id="wcfm_orders_manage_shipping_address_form">
-				<div class="">
-						<input name="shiping_address_order_id" type="hidden"
-						value="<?php echo  $shipping_address_array['order_id']; ?>" >	
-
-					<div class="wcfm_popup_wrapper">
-						<span class="wcfm_popup_label"><strong>First name</strong></span>
-						<input name="shipping_first_name" type="text" class="wcfm_popup_input" id="shipping_first_name" placeholder="First name" value="<?php echo $shipping_address_array['shipping_first_name'];  ?>" >	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>Last name</strong></span>
-						<input name="shipping_last_name" type="text" class="wcfm_popup_input" id="shipping_last_name" placeholder="Last name" value="<?php echo $shipping_address_array['shipping_last_name'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-					
-						<span class="wcfm_popup_label"><strong>Address 1</strong></span>
-						<input name="shipping_address_1" type="text" class="wcfm_popup_input" id="shipping_address_1" placeholder="Address 1" value="<?php echo $shipping_address_array['shipping_address_1'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>Address 2</strong></span>
-						<input name="shipping_address_2" type="text" class="wcfm_popup_input" id="shipping_address_2" placeholder="Address 2" value="<?php echo $shipping_address_array['shipping_address_2'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>Country</strong></span>
-						<input readonly name="shipping_country" type="text" class="wcfm_popup_input" id="shipping_country" placeholder="Country" value="<?php echo $shipping_address_array['shipping_country'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-
-						<span class="wcfm_popup_label"><strong>City</strong></span>
-						<input name="shipping_city" type="text" class="wcfm_popup_input" id="shipping_city" placeholder="City" value="<?php echo $shipping_address_array['shipping_city'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>State</strong></span>
-						<input name="shipping_state" type="text" class="wcfm_popup_input" id="shipping_state" placeholder="State" value="<?php echo $shipping_address_array['shipping_state'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>Postcode</strong></span>
-						<input name="shipping_postcode" type="text" class="wcfm_popup_input" id="shipping_postcode" placeholder="Postcode" value="<?php echo $shipping_address_array['shipping_postcode'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						<button name="wcfm_orders_manage_shipping_address_button" value="submit" id="wcfm_orders_manage_shipping_address_button" class="wcfm_popup_button ">Submit</button>
-						<div class="wcfm_clearfix"></div>
-
-
-					</div>
-
-				</div>
-			</form>
-	</div>
-
-
-
-		<?php 
-
-		//start order extra detail
-
-		$order_edit_array =array(
-			"payment_details"=> get_post_meta( $order->get_id(), '_transaction_id', true ),
-			"invoice_notes"=> get_post_meta( $order->get_id(), '_wcpdf_invoice_notes', true ),
-			"delivery_times"=> get_post_meta( $order->get_id(), '_wcfmd_delvery_times', true ),
-			"order_id" => $order->get_id(),
-			"payment_paid"=> get_post_meta( $order->get_id(), '_wcfm_om_payment_paid', true )
-
-		);
-
-		$delivery_time = "";
-		$delivery_date = "";
-		if($order_edit_array['delivery_times']){
-			$wcfmd_delvery_times = $order_edit_array['delivery_times'];
-			$lastArrayString=end($wcfmd_delvery_times);
-			$timeStamp = end(explode('|', $lastArrayString));
-			$delivery_date = date('Y-m-d', $timeStamp);
-			$delivery_time = date('h:m', $timeStamp);
-		}
-
-		?>
-
-
-		<div class="wcfm-clearfix"></div><br/>
-		<div id="wcfm-edit-info-popup"  style="display:none">
-			<div class="page_collapsible">
-								Edit Order information
-			</div>
-			<form method="post" id="wcfm_orders_manage_edit_form">
-				<div class="">
-					
-
-						<input name="extra_edit_order_id" type="hidden"
-						value="<?php echo  $order_edit_array['order_id']; ?>" >	
-
-					
-
-					<div class="wcfm_popup_wrapper">
-						<span class="wcfm_popup_label"><strong>Delivery date</strong></span>
-						<input name="current_delivery_date" type="date"  min="<?php echo date("Y-m-d")?>" class="wcfm_popup_input" id="delivery_date" value="<?php echo $delivery_date;  ?>" >	
-						<div class="wcfm_clearfix"></div>
-
-						<span class="wcfm_popup_label"><strong>Delivery time</strong></span>
-						<input name="current_delivery_time" type="time" class="wcfm_popup_input" id="delivery_time"value="<?php echo $delivery_time;  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-					
-						<span class="wcfm_popup_label"><strong>Invoice note/order detail</strong></span>
-						<input name="current_invoice_note" type="text" class="wcfm_popup_input" id="invoice_note" placeholder="invoice note" value="<?php echo $order_edit_array['invoice_notes'];  ?>">	
-						<div class="wcfm_clearfix"></div>
-
-						
-						<button name="wcfm_orders_manage_edit_button" value="submit" id="wcfm_orders_manage_edit_button" class="wcfm_popup_button ">Submit</button>
-						<div class="wcfm_clearfix"></div>
-
-
-					</div>
-
-				</div>
-			</form>
-	</div>
-
-
-<style>
-	.wcfm-add-product .add_multi_input_block.fa-plus-circle{
-		display: none !important;
-	}
-	@media screen and (max-width: 786px) {
-		.select2.select2-container.select2-container--default,.wcfm-select.wcfm_ele.associate_product_variation.multi_input_block_element{
-			    width: 100% !important;
-		}
- 
-	}
-	#orders_details_items_expander ul.wc_coupon_list li.code{
-		display: inline-flex !important;
-		cursor: pointer;
-		padding-top: 5px !important;
-	}
-	.svg-icon-cross-custom{
-		width: 26px;
-		stroke: #ca4a1f;
-	}
-	#orders_details_notes_expander .product-wrapper{
-		display: flex;
-    justify-content: space-between;
-    background: white;
-	}
-
-
-
-</style>
-
-		<script>
-
-
-jQuery(document).ready(function($) {
-$('#order_shipping_line_items .shipping:first-child h2').html(' Shipping / Extra change Item(s)');
-
-var shippingFooter =jQuery('.wc-order-totals tr:nth-child(2) .label').html().replace("Shipping:","Shipping/Extra Charges");
- $('.wc-order-totals tr:nth-child(2) .label').html(shippingFooter);
-
-if($('.wcfm_order_edit_request').length===0){
-	$('.wc-order-edit-line-item').remove();
-}
-
-if($('.wcfm_order_edit_request').length>0){
-
-$('#orders_details_general_expander table thead tr:first-child th:first-child').append('<a class="wcfm-action-icon" href="javascript:void(0)" style="margin-left: 20px;" id="wcfm-edit-billing-info-popup-show-button"><span class="wcfmfa fa-edit text_tip" data-tip="Billing edit" data-hasqtip="116" aria-describedby="qtip-116"></span></a>');
-
-$('#orders_details_general_expander table thead tr:first-child th:last-child').append('<a class="wcfm-action-icon" href="javascript:void(0)" style="margin-left: 20px;" id="wcfm-edit-shipping-info-popup-show-button"><span class="wcfmfa fa-edit text_tip" data-tip="shipping edit" data-hasqtip="116" aria-describedby="qtip-116"></span></a>');
-
-$('#orders_details_general_expander').append('<a id="wcfm-order-detail-edit" class="add_new_wcfm_ele_dashboard" href="javascript:void(0)" ><span class="wcfmfa fa-pencil-alt text_tip"></span><span class="text">Detail Edit</span></a><div class="wcfm_clearfix"></div>');
-
-$('.wcfm-add-product').prepend('<a id="wcfm-order-edit-add-product" class="add_new_wcfm_ele_dashboard" href="javascript:void(0)" ><span class="wcfmfa fa-cart-plus"></span><span class="text">Add more product</span></a><div class="wcfm_clearfix"></div>');
-
-var  Coupon_code_li = $('.wc-used-coupons .wc_coupon_list .code');
-Coupon_code_li.each(function(index,value){
-	var coupon_code_title=$('a span',this).text();
-	var icon='<form method="post" class="wc_coupon_list_btn" id="wc_coupon_list_'+index+'">'+
-									'<input type="hidden" name="wc_coupon_list_order_id" value="<?php echo  $order_edit_array['order_id']; ?>">'+
-									'<input type="hidden" name="coupon_code_title" value="'+coupon_code_title+'">'+
-								'<svg  class="svg-icon  svg-icon-cross-custom" viewBox="0 0 20 20">'+
-							'<path d="M10.185,1.417c-4.741,0-8.583,3.842-8.583,8.583c0,4.74,3.842,8.582,8.583,8.582S18.768,14.74,18.768,10C18.768,5.259,14.926,1.417,10.185,1.417 M10.185,17.68c-4.235,0-7.679-3.445-7.679-7.68c0-4.235,3.444-7.679,7.679-7.679S17.864,5.765,17.864,10C17.864,14.234,14.42,17.68,10.185,17.68 M10.824,10l2.842-2.844c0.178-0.176,0.178-0.46,0-0.637c-0.177-0.178-0.461-0.178-0.637,0l-2.844,2.841L7.341,6.52c-0.176-0.178-0.46-0.178-0.637,0c-0.178,0.176-0.178,0.461,0,0.637L9.546,10l-2.841,2.844c-0.178,0.176-0.178,0.461,0,0.637c0.178,0.178,0.459,0.178,0.637,0l2.844-2.841l2.844,2.841c0.178,0.178,0.459,0.178,0.637,0c0.178-0.176,0.178-0.461,0-0.637L10.824,10z"></path>'+
-						'</svg>';
-	$(this).append(icon);
-});
-
-// start productSectionHtmlCode
-var productSectionHtmlCode = $('.wcfm-orders-manage-add-product-section').html();
-$('.wcfm-orders-manage-add-product-section').remove();
-$('#orders_details_items_expander').prepend("<div class='wcfm-orders-manage-add-product-section' style='display:none' >"+productSectionHtmlCode+"</div>");
-// end productSectionHtmlCode
-
-
-
-$( document ).on( "click", ".wcfm_orders_manage_add_products_form_display_button", function(e) {
-	e.preventDefault;
-	$('#wcfm_orders_manage_edit_section').toggle('slow');
-});
-
-$( document ).on( "click", ".wc_coupon_list_btn", function(e) {
-	e.preventDefault;
-	var form_id= $(this).attr('id');
-	var popUp_id = "#wcfm-edit-shipping-info-popup";
-	formSubmitAction(popUp_id,"#"+form_id);
-});
-
-$( document ).on( "click", ".remove__shipping_from_order", function(e) {
-	e.preventDefault;
-	var form_id= $(this).data('itemid');
-	var popUp_id = "#order_shipping_line_items";
-	formSubmitAction(popUp_id,"#remove__shipping_from_order_"+form_id);
-});
-
-
-$( document ).on( "click", "#add_shipping_method_btn", function(e) {
-	e.preventDefault;
-	var form_id= "#add_shipping_method";
-	var popUp_id = ".add_shipping_method";
-	formSubmitAction(popUp_id,form_id);
-});
-
-
-
-
-$('#wcfm-edit-shipping-info-popup-show-button').click(function(e){
-	e.preventDefault;
-	var popUp_id = "#wcfm-edit-shipping-info-popup";
-	var popUp_form = "#wcfm_orders_manage_shipping_address_form";
-	var popUp_submit = "#wcfm_orders_manage_shipping_address_button";
-	order_edit(popUp_id,popUp_form,popUp_submit);
-});
-
-$('#wcfm-order-edit-add-product').click(function(e){
-	e.preventDefault;
-	if(jQuery('#associate_products_variation_0').val() === null){
-		alert("Please select product");
-		return false;
-	}
-	$('#associate_products .add_multi_input_block.multi_input_block_manupulate.wcfmfa.fa-plus-circle').trigger('click');
-	$('.wcfm-add-product #associate_products_quantity_0').val();
-	var quantity = jQuery('.wcfm-add-product #associate_products_quantity_0').val();
-	jQuery('#associate_products .select2-selection__clear:first').trigger('mousedown');
-	$('#associate_products .associate_product_qty:last').val(quantity);
-	$('#associate_products .associate_product_qty:first').val("1");
-	jQuery('.remove_multi_input_block:first').hide();//remove x first
 	
-});
-
-    
-
-$('#wcfm-edit-billing-info-popup-show-button').click(function(e){
-	e.preventDefault;
-	var popUp_id = "#wcfm-edit-billing-info-popup";
-	var popUp_form = "#wcfm_orders_manage_billing_address_form";
-	var popUp_submit = "#wcfm_orders_manage_billing_address_button";
-	order_edit(popUp_id,popUp_form,popUp_submit);
-});
-$('#wcfm-order-detail-edit').click(function(e){
-	e.preventDefault;
-	var popUp_id = "#wcfm-edit-info-popup";
-	var popUp_form = "#wcfm_orders_manage_edit_form";
-	var popUp_submit = "#wcfm_orders_manage_edit_button";
-	order_edit(popUp_id,popUp_form,popUp_submit);
-});
-
-
-$( document ).on( "click", "#wcfm_orders_manage_add_products_form_save_button", function(e) {
-	e.preventDefault();
-	var popUp_id = ".wcfm-orders-manage-add-product-section";
-	var popUp_form = "#wcfm_orders_manage_add_products_form";
-	formSubmitAction(popUp_id,popUp_form);
-});
-$( document ).on( "click", ".delete-order-item", function(e) {
-	e.preventDefault();
-	var itemid = $(this).data("itemid");
-	var popUp_id = ".wcfm-orders-manage-add-product-section";
-	var popUp_form = "#remove__products_from_order_form_"+itemid;
-	formSubmitAction(popUp_id,popUp_form);
-});
-
-
-	function formSubmitAction(popUp_id,popUp_form){
-		  jQueryquick_edit = $(this);
-			
-			// Ajax Call for Fetching Quick Edit HTML
-			$(popUp_id).block({
-				message: null,
-				overlayCSS: {
-					background: '#fff',
-					opacity: 0.6
-				}
-			});
-			var data = {
-				action  : 'wcfm_modify_order_status',
-				wcfm_orders_manage_form : $(popUp_form).serialize(),
-				wcfm_orders_manage_billing_address_button: 'submit'
-			}	
-			
-			jQuery.ajax({
-				type    :		'POST',
-				url     : wcfm_params.ajax_url,
-				data    : data,
-				success :	function(response) {
-					
-					$(popUp_id).unblock();
-					console.log(response);
-					//$response_json = $.parseJSON(response);
-					wcfm_notification_sound.play();
-					$(popUp_form).trigger('reset');
-					//location.reload();
-					//$.colorbox.resize();
-				}
-			});
-
-		}
-      
-      function order_edit(popUp_id,popUp_form,popUp_submit) {
-      	var $popup_width = '70%';
-	      if( $(window).width() <= 960 ) {
-	        $popup_width = '90%';
-	      }
-
-	      jQuery.colorbox( { 
-        inline:true, 
-        scrolling:true,
-        href: popUp_id,
-        width: $popup_width,
-        onComplete:function() {
-        	//$('body').css({"overflow":"hidden"});
-        	$(popUp_id).show();
-        	$.colorbox.resize();
-        	$(popUp_submit).click(function(event) {
-						  event.preventDefault();
-        			formSubmitAction(popUp_id,popUp_form);
-        			//click event 
-					});
-					
-        },
-        onClosed: function() {
-		     // $('body').css({"overflow":"unset"});
-		      $(popUp_id).hide();
-		    }
-
-
-      });
-    }
-
-
-}
-
-
-	if( $("#associate_products").length > 0 ) {
-		$("#associate_products").find('.associate_product').select2( $wcfm_simple_product_select_args );
-	}
-	
-	$('#associate_products').find('.add_multi_input_block').click(function() {
-		$('#associate_products').find('.multi_input_block:last').find('.associate_product').val('').select2( $wcfm_simple_product_select_args );
-	  $('#associate_products').find('.multi_input_block:last').find('.associate_product_variation').html('').addClass('wcfm_ele_hide');
-		$('#associate_products').find('.multi_input_block:last').find('.associate_product_variation_label').addClass('wcfm_ele_hide');
-		$('#associate_products').find('.multi_input_block:last').find('.associate_product_qty').val('1');
-		variationSelectProperty( $("#associate_products").find('.associate_product') );
-	});
-
-	variationSelectProperty( $('#associate_products').find('.multi_input_block:last').find('.associate_product') );
-	
-	// // Check is Variable Product
-	function variationSelectProperty( $element ) {
-		$element.on('change', function() {
-			$associate_product = $(this);
-			$selected_product = $(this).val();
-			$variations_html  = '';
-			if( $selected_product ) {
-				jQuery.each( $wcfm_search_products_list, function( id, product ) {
-					if( $selected_product == id ) {
-						$variations = product.variations;
-						if( !jQuery.isEmptyObject( $variations ) ) {
-							$.each($variations, function( $variation_id, $variation_label ) {
-								$variations_html += '<option value="' + $variation_id + '">' + $variation_label + '</option>';
-							});
-							$associate_product.parent().find('.associate_product_variation').html($variations_html).removeClass('wcfm_ele_hide');
-							$associate_product.parent().find('.associate_product_variation_label').removeClass('wcfm_ele_hide');
-						} else {
-							$associate_product.parent().find('.associate_product_variation').html($variations_html).addClass('wcfm_ele_hide');
-							$associate_product.parent().find('.associate_product_variation_label').addClass('wcfm_ele_hide');
-						}
-					}
-				});
-			} else {
-				$associate_product.parent().find('.associate_product_variation').html($variations_html).addClass('wcfm_ele_hide');
-				$associate_product.parent().find('.associate_product_variation_label').addClass('wcfm_ele_hide');
-			}
-		});
-	}
-
-
-			
-
-//ready end
-
-});
-
-		</script>
 
 		<!-- collapsible -->
-		<div class="page_collapsible wcfm_orders_manage_add_products_form_display_button"><?php _e('Order items Edit', 'wc-frontend-manager'); ?><span></span></div>
-		<div class="wcfm-container" id="wcfm_orders_manage_edit_section" style="display:none">
-
-							<div class="wcfm-clearfix"></div><br/>
-							<div class="page_collapsible">
-													Add products
-								</div>
-							<div class="wcfm-container" style="background: #6666660d;    border-width: 0px 0px 0px 4px;border-style: solid;">
-								<form method="post" id="wcfm_orders_manage_add_products_form">
-									<div class="">
-										
-
-											<input name="add_more_products_order_id" type="hidden"
-											value="<?php echo  $order_edit_array['order_id']; ?>" >	
-
-										<div class="wcfm_popup_wrapper">
-
-											<div class="wcfm-add-product">
-											<?php
-											$WCFM->wcfm_fields->wcfm_generate_form_field( apply_filters( 'wcfm_orders_manage_fields_product', array(  
-												                                                                                  "associate_products" => array( 'type' => 'multiinput', 'class' => 'wcfm_non_sortable', 'options' => array( 
-																																																																					"product" => array( 'label' => __( 'Product', 'wc-frontend-manager-ultimate' ), 'type' => 'select', 'attributes' => array( 'style' => 'width: 50%;' ), 'label_class' => 'wcfm_title', 'class' => 'wcfm-select wcfm_ele associate_product wcfm_popup_input', 'options' => array(), 'value' => '' ),
-																																																																					"variation"  => array( 'label' => __( 'Variation', 'wc-frontend-manager-ultimate' ), 'type' => 'select', 'label_class' => 'wcfm_title wcfm_ele_hide associate_product_variation_label', 'class' => 'wcfm-select wcfm_ele wcfm_ele_hide associate_product_variation', 'attributes' => array( 'style' => 'width: 50%;' ), 'option' => array(), 'value' => '' ),
-																																																																					"quantity"  => array( 'label' => __( 'Quantity', 'wc-frontend-manager-ultimate' ), 'type' => 'number', 'label_class' => 'wcfm_title', 'class' => 'wcfm-text wcfm_ele wcfm_non_negative_input associate_product_qty wcfm_popup_input', 'attributes' => array( 'style' => 'width: 50%;' ), 'value' => '1' )
-																																																																				) )
-																																																) ) );
-											?>
-											</div> 
-
-
-											
-											<button type="submit" name="wcfm_orders_manage_add_products_form_save_button" value="submit" id="wcfm_orders_manage_add_products_form_save_button" class="wcfm_popup_button">Submit product</button>
-
-											<div class="wcfm_clearfix"></div>
-
-
-										</div>
-
-									</div>
-								</form>
-
-						</div>
-
-
-					<div class="wcfm-clearfix"></div><br/>
-						<div class="page_collapsible" id="wcfm_om_shipping_head">
-							<label class="wcfmfa fa-truck"></label>
-							<?php _e('Shipping/Extra Charge', 'wc-frontend-manager'); ?><span></span>
-						</div>
-					<div class="wcfm-container add_shipping_method" style="background: #6666660d;    border-width: 0px 0px 0px 4px;border-style: solid;">
-
-						<form method="post" id="add_shipping_method" class="wcfm_popup_wrapper">
-
-							<input name="add_shipping_method_order_id" type="hidden"
-							value="<?php echo  $order_edit_array['order_id']; ?>" >	
-
-							<?php
-								$shipping_methods = WC()->shipping->load_shipping_methods();
-								$shipping_method_array = array( '' => __( 'Select Shipping Method/Extra Charge', 'wc-frontend-manager-ultimate' ) );
-								if( !empty( $shipping_methods ) ) {
-									foreach( $shipping_methods as $shipping_method ) {
-										$shipping_method_array[$shipping_method->id] = esc_attr( $shipping_method->get_method_title() ); 
-									}
-								}
-							?>
-							 <?php if( !empty( $shipping_method_array ) && apply_filters( 'wcfm_orders_manage_shipping', true ) ) { ?>
-									
-									<div class="wcfm-container">
-										<div id="wcfm_on_shipping_expander" class="wcfm-content">
-											<?php
-											$WCFM->wcfm_fields->wcfm_generate_form_field( apply_filters( 'wcfm_orders_manage_fields_shipping', array(  
-																																																					"wcfm_om_shipping_method" => array( 'label' => __( 'Shipping Method / Extra Charge', 'wc-frontend-manager-ultimate' ), 'type' => 'select', 'class' => 'wcfm-select wcfm_ele', 'label_class' => 'wcfm_title wcfm_ele', 'options' => $shipping_method_array, 'value' => '' ),
-																																																					"wcfm_om_shipping_cost"  => array( 'label' => __( 'Cost', 'wc-frontend-manager-ultimate' ), 'type' => 'number', 'class' => 'wcfm-text wcfm_ele', 'label_class' => 'wcfm_title wcfm_ele', 'value' => '' ),
-																																																					"wcfm_om_shipping_quantity"  => array( 'label' => __( 'Quantity', 'wc-frontend-manager-ultimate' ), 'type' => 'number', 'class' => 'wcfm-text wcfm_ele', 'label_class' => 'wcfm_title wcfm_ele', 'value' => '' ),
-																																																					"wcfm_om_shipping_title"  => array( 'label' => __( 'Title', 'wc-frontend-manager-ultimate' ), 'type' => 'text', 'class' => 'wcfm-text wcfm_ele', 'label_class' => 'wcfm_title wcfm_ele', 'value' => '' )
-																																																								
-																																																)) );
-											?>
-											<?php do_action( 'wcfm_orders_manage_after_shipping' ); ?>
-											
-										</div>
-									</div>
-								<?php } ?>
-
-								<button type="button" name="add_shipping_method_btn" value="submit" id="add_shipping_method_btn" class="wcfm_popup_button">Submit shipping</button>
-
-								<div class="wcfm_clearfix"></div>
-
-							</form>
-					</div>
-
-		</div>
-
-
 		
+
+
+					
 		<div class="wcfm-clearfix"></div><br />
 		<!-- collapsible -->
 		<div class="page_collapsible orders_details_items" id="wcfm_orders_items_options"><?php _e('Order Items', 'wc-frontend-manager'); ?><span></span></div>
@@ -1092,6 +619,7 @@ $( document ).on( "click", ".delete-order-item", function(e) {
 					<tbody id="order_line_items">
 					<?php
 						foreach ( $line_items as $item_id => $item ) {
+
 							$_product  = $item->get_product();
 							$product_link = '';
 							do_action( 'woocommerce_before_order_item_' . $item->get_type() . '_html', $item_id, $item, $order );
@@ -1110,7 +638,22 @@ $( document ).on( "click", ".delete-order-item", function(e) {
 								<td class="thumb no_mob">
 									<?php
 										echo '<div class="wc-order-item-thumbnail no_ipad">' . wp_kses_post( $thumbnail ) . '</div>';
+
+
 									?>
+									<div><?php
+									//$_product1 = new WC_Product( $item_id );
+				
+									//print_r($_product1, true);
+									 //printf($item); ?></div>
+									<hr>
+									<div><?php  
+										//echo print_r($_product, true);
+
+//printf($_product->get_meta_data() ); ?></div>
+
+
+
 								</td>
 								<td class="name" data-sort-value="<?php echo esc_attr( $item->get_name() ); ?>">
 									<?php
@@ -1234,18 +777,7 @@ $( document ).on( "click", ".delete-order-item", function(e) {
 								
 								<?php do_action( 'wcfm_after_order_details_line_total', $item, $order ); ?>
 
-								<td class="wc-order-edit-line-item">
-									<form method="post" id="remove__products_from_order_form_<?php echo $item_id; ?>">
-										<input type="hidden" name="remove__products_from_order" value="yess">
-										<input type="hidden" name="item_id" value="<?php echo $item_id; ?>">
-										<input type="hidden" name="order_id" value="<?php echo $order->get_id(); ?>">
-										<div class="wc-order-edit-line-item-actions">
-											<a class="delete-order-item tips" href="javascript:void(0)" data-itemid="<?php echo $item_id; ?>" data-tip="<?php esc_attr_e( 'Delete item', 'woocommerce' ); ?>"><svg class="svg-icon svg-icon-cross-custom" viewBox="0 0 20 20">
-							<path d="M10.185,1.417c-4.741,0-8.583,3.842-8.583,8.583c0,4.74,3.842,8.582,8.583,8.582S18.768,14.74,18.768,10C18.768,5.259,14.926,1.417,10.185,1.417 M10.185,17.68c-4.235,0-7.679-3.445-7.679-7.68c0-4.235,3.444-7.679,7.679-7.679S17.864,5.765,17.864,10C17.864,14.234,14.42,17.68,10.185,17.68 M10.824,10l2.842-2.844c0.178-0.176,0.178-0.46,0-0.637c-0.177-0.178-0.461-0.178-0.637,0l-2.844,2.841L7.341,6.52c-0.176-0.178-0.46-0.178-0.637,0c-0.178,0.176-0.178,0.461,0,0.637L9.546,10l-2.841,2.844c-0.178,0.176-0.178,0.461,0,0.637c0.178,0.178,0.459,0.178,0.637,0l2.844-2.841l2.844,2.841c0.178,0.178,0.459,0.178,0.637,0c0.178-0.176,0.178-0.461,0-0.637L10.824,10z"></path>
-						</svg></a>
-										</div>
-									</form>
-								</td>
+								
 
 
 							</tr>
@@ -1334,18 +866,7 @@ $( document ).on( "click", ".delete-order-item", function(e) {
 								<?php do_action( 'wcfm_after_order_details_shipping_total', $item, $order ); ?>
 
 
-								<td class="wc-order-edit-line-item">
-									<form method="post" id="remove__shipping_from_order_<?php echo $item_id; ?>">
-										<input type="hidden" name="remove__shipping_from_order" value="yess">
-										<input type="hidden" name="item_id" value="<?php echo $item_id; ?>">
-										<input type="hidden" name="order_id" value="<?php echo $order->get_id(); ?>">
-										<div class="wc-order-edit-line-item-actions">
-											<a class="remove__shipping_from_order tips" href="javascript:void(0)" data-itemid="<?php echo $item_id; ?>" data-tip="<?php esc_attr_e( 'Delete item', 'woocommerce' ); ?>"><svg class="svg-icon svg-icon-cross-custom" viewBox="0 0 20 20">
-							<path d="M10.185,1.417c-4.741,0-8.583,3.842-8.583,8.583c0,4.74,3.842,8.582,8.583,8.582S18.768,14.74,18.768,10C18.768,5.259,14.926,1.417,10.185,1.417 M10.185,17.68c-4.235,0-7.679-3.445-7.679-7.68c0-4.235,3.444-7.679,7.679-7.679S17.864,5.765,17.864,10C17.864,14.234,14.42,17.68,10.185,17.68 M10.824,10l2.842-2.844c0.178-0.176,0.178-0.46,0-0.637c-0.177-0.178-0.461-0.178-0.637,0l-2.844,2.841L7.341,6.52c-0.176-0.178-0.46-0.178-0.637,0c-0.178,0.176-0.178,0.461,0,0.637L9.546,10l-2.841,2.844c-0.178,0.176-0.178,0.461,0,0.637c0.178,0.178,0.459,0.178,0.637,0l2.844-2.841l2.844,2.841c0.178,0.178,0.459,0.178,0.637,0c0.178-0.176,0.178-0.461,0-0.637L10.824,10z"></path>
-						</svg></a>
-										</div>
-									</form>
-								</td>
+
 							
 							</tr>
 							<?php
@@ -1576,26 +1097,7 @@ $( document ).on( "click", ".delete-order-item", function(e) {
 						</tr>
 						<?php } ?>
 
-						<tr>
-							<th class="label"><?php _e( 'Paid Amount', 'wc-frontend-manager' ); ?>:</th>
-							<td width="1%"></td>
-							<td class="total">
-								<div class="view"><?php echo  wc_price( end($order_edit_array['payment_paid']), array( 'currency' => $order->get_currency() ) );
-								 ?></div>
-							</td>
-						</tr>
 
-						<tr>
-							<th class="label"><?php _e( 'Remaining Amount', 'wc-frontend-manager' ); ?>:</th>
-							<td width="1%"></td>
-							<td class="total">
-								<div class="view"><?php 
-									$remaining_amount =(float) $order->get_total() - (float) end($order_edit_array['payment_paid']); 
-									echo  wc_price( $remaining_amount, array( 'currency' => $order->get_currency() ) );
-									 ?>
-								</div>
-							</td>
-						</tr>
 
 				
 						<?php if( apply_filters( 'wcfm_order_details_refund_line_item', true ) && apply_filters( 'wcfm_order_details_refund_total', true ) ) { ?>
@@ -1658,6 +1160,13 @@ $( document ).on( "click", ".delete-order-item", function(e) {
 				</div>
 				
 				<?php do_action( 'after_wcfm_orders_details_items', $order_id, $order, $line_items ); ?>
+
+
+
+
+
+
+
 				<div class="wcfm-clearfix"></div>
 			</div>
 		</div>
@@ -1665,13 +1174,3 @@ $( document ).on( "click", ".delete-order-item", function(e) {
 		<?php do_action( 'end_wcfm_orders_details', $order_id ); ?>
 	</div>
 </div>
-
-
-
-
-<?php
-do_action( 'after_wcfm_orders_details', $order_id );
-?>
-
-
-

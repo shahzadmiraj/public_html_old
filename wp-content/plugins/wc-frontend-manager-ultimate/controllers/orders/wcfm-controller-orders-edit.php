@@ -42,76 +42,11 @@ class WCFMu_Orders_Edit_Controller {
 			do_action( 'before_wcfm_orders_edit', $order->get_id(), $order, $wcfm_orders_edit_form_data );
 
 
-			$commentText = "";
+			//start
 
 			
 
-			$order_items = $wcfm_orders_edit_form_data['wcfm_order_edit_input'];
-	  		$products = array();
-
-	  		foreach( $order_items as $order_edit_input_id => $order_edit_input ) {
-	  			
-	  			$order_item_id = absint( $order_edit_input['item'] );
-	  		
-	  			if( !$order_item_id ) continue;
-	  			
-	  			$line_item  = new WC_Order_Item_Product( $order_item_id );
-	  			
-	  			// Reset Item Processed BIt
-	  			$order_item_processed = wc_get_order_item_meta( $order_item_id, '_wcfmmp_order_item_processed', true );
-					if( $order_item_processed ) {
-						wc_delete_order_item_meta( $order_item_id, '_wcfmmp_order_item_processed' );
-					}
-	  			
-	  			$product    = $line_item->get_product();
-	  			$products[] = $line_item->get_product_id();
-	  			$quantity       = $order_edit_input['qty'];
-	  			$edited_total   = $order_edit_input['total'];
-	  			
-	  			if(($quantity != $line_item->get_quantity()) || ((float) $line_item->get_total()!= $edited_total) ){
-	  				$commentText.="<div class='product-wrapper'>
-					  					<div class='product-title'>product:".$line_item->get_name()."</div>
-					  					<div class='product-quantity'>quantity:".$line_item->get_quantity()."</div>
-					  					<div class='product-total'>total:".((float) $line_item->get_total())."</div>
-	  								</div>";	
-	  			}
-	  		}
-	  		if(!empty($wcfm_orders_edit_form_data['wcfm_om_discount'])){
-	  			$commentText.='<div class="coupon-wrapper">coupon:'.$wcfm_orders_edit_form_data['wcfm_om_discount'].'</div>';
-	  		}
-
-	  		$payment_paids= get_post_meta( $order->get_id(), '_wcfm_om_payment_paid', true );
-			$payment_paid = (float) end($payment_paids);
-			$updated_paid = $wcfm_orders_edit_form_data['paidAmount'];
-			if($payment_paid != $updated_paid){
-				$updatedPaid = array();
-				if (empty($payment_paids) || !isset($payment_paids)) {
-					array_push($updatedPaid,$updated_paid);
-				}else{
-					array_push($payment_paids,$updated_paid);
-					$updatedPaid=$payment_paids;
-				}
-				update_post_meta($order->get_id(),'_wcfm_om_payment_paid',$updatedPaid);
-				$commentText.="<div class='paid_icon'>Paid Amount:".$updated_paid."</div>";
-			}
-
-	  		if(!empty($commentText)){
-
-				$user_id = apply_filters( 'wcfm_current_vendor_id', get_current_user_id() );
-				$shop_name =  get_user_by( 'ID', $user_id )->display_name;
-				if( wcfm_is_vendor() ) {
-					$shop_name =  wcfm_get_vendor_store( absint($user_id) );
-				}
-				$wcfm_messages = sprintf( __( 'Order Edit information updated to <b>%s</b> by <b>%s</b>', 'wc-frontend-manager' ),$commentText, $shop_name );
-				$is_customer_note = apply_filters( 'wcfm_is_allow_order_update_note_for_customer', '1' );
-
-				$comment_id = $order->add_order_note( $wcfm_messages, $is_customer_note);
-				if( wcfm_is_vendor() ) { add_comment_meta( $comment_id, '_vendor_id', $user_id ); }
-
-			}
-	  		
-
-
+			//end
 
 
 

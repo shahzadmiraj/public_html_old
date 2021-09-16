@@ -74,31 +74,11 @@ foreach ( $line_items as $item_id => $item ) {
 									wc_display_item_meta( $item );
 									do_action( 'woocommerce_order_item_meta_end', $item_id, new WC_Order_Item_Product( $item_id ), $order, false );
 								  ?>
-
 	
-								  <script>
-								  jQuery(document).ready(function($) {
-								  	var payment_paid= '<?php echo (float) end(get_post_meta( $order->get_id(), '_wcfm_om_payment_paid', true ));?>';
-								  	$('#wcfm_om_discount').after('<div class="wcfm_clearfix"></div>'+
-										'<p class="wcfm-order_edit-form-paidAmount wcfm_popup_label">'+
-										'<strong for="wcfm-order_edit-form-paidAmount">Paid Amount</strong>'+
-										'</p><input type="number"  id="wcfm-order_edit-form-paidAmount" name="paidAmount" class="wcfm_popup_input" value="'+payment_paid+'">');
-
-									var $popup_width = '70%';
-									var $popup_height = '90%';
-								      if( $(window).width() <= 960 ) {
-								        $popup_width = '90%';
-								        $popup_height = '100%';
-								      }
-								      $.colorbox.resize({
-						                    width: $popup_width,
-						                    height: $popup_height
-						              });
-								  });
-
-								  </script>
 								</td>
 								
+								
+
 								<td class="item_cost sortable no_mob" data-sort="float" style="text-align:center;"><?php echo wc_price( $product_item['cost'], array( 'currency' => $currency ) ); ?></td>
 								
 								<td class="item_quantity wcfm_item_qty_heading sortable" data-sort="int" style="text-align:center;">
