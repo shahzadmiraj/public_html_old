@@ -1,0 +1,176 @@
+2021-09-05T06:26:09+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:11+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:11+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:11+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:11+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:12+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:12+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:13+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:13+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:13+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:13+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:13+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:13+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:13+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:13+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+
+2021-09-05T06:26:13+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_get_hot_words() in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php:34
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(772): require()
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/template.php(716): load_template('/home/sites/19a...', false, Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/inc/mobile/layout.php(261): get_template_part('template-parts/...')
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): Martfury_Mobile->mobile_modal_popup('')
+#5 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /home/s in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/themes/martfury/template-parts/mobile/search.php on line 34
+

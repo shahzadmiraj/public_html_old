@@ -1,0 +1,9 @@
+2021-09-11T06:37:30+00:00 CRITICAL Uncaught Error: Call to a member function delete() on bool in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/plugins/code-snippets/php/snippet-ops.php(469) : eval()'d code:316
+Stack trace:
+#0 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(303): {closure}('', Object(Automattic\WooCommerce\Admin\Overrides\Order), Array)
+#1 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#2 /home/sites/19a/6/60a63a342e/eventapna.com/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#3 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/plugins/wc-frontend-manager-ultimate/controllers/orders/wcfm-controller-orders-edit.php(42): do_action('before_wcfm_ord...', 6565, Object(Automattic\WooCommerce\Admin\Overrides\Order), Array)
+#4 /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/plugins/wc-frontend-manager-ultimate/controllers/orders/wcfm-controller-orders-edit.php(17): WCFMu_Orders_Edit_Controller->processing()
+#5 /home/sit in /home/sites/19a/6/60a63a342e/eventapna.com/wp-content/plugins/code-snippets/php/snippet-ops.php(469) : eval()'d code on line 316
+

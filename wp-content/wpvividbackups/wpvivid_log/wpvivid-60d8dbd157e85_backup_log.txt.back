@@ -1,0 +1,60 @@
+Log created: 2021-06-27 20:13:20
+Type: transfer
+[2021-06-27 20:13:20][notice]server info fcgi:Off max execution time: 900 wp version:5.7.2 php version:7.3.28 db version:5.7.34 php ini:safe_mode: memory_limit:256M memory_get_usage:58.26 MB memory_get_peak_usage:58.73 MB extensions:PDO enabled curl enabled zlib enabled   is_multisite:0
+[2021-06-27 20:13:20][notice]Connect site success
+[2021-06-27 20:13:29][notice]start upload.
+[2021-06-27 20:13:29][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:0 B
+[2021-06-27 20:13:32][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:2097152
+[2021-06-27 20:13:32][notice]continue size:2097152 size1:28552147
+[2021-06-27 20:13:42][notice]start upload.
+[2021-06-27 20:13:42][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:2 MB
+[2021-06-27 20:13:45][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:4194304
+[2021-06-27 20:13:45][notice]continue size:4194304 size1:28552147
+[2021-06-27 20:13:52][notice]start upload.
+[2021-06-27 20:13:52][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:4 MB
+[2021-06-27 20:13:53][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:6291456
+[2021-06-27 20:13:53][notice]continue size:6291456 size1:28552147
+[2021-06-27 20:13:58][notice]start upload.
+[2021-06-27 20:13:58][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:6 MB
+[2021-06-27 20:13:58][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:8388608
+[2021-06-27 20:13:58][notice]continue size:8388608 size1:28552147
+[2021-06-27 20:14:04][notice]start upload.
+[2021-06-27 20:14:04][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:8 MB
+[2021-06-27 20:14:04][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:10485760
+[2021-06-27 20:14:04][notice]continue size:10485760 size1:28552147
+[2021-06-27 20:14:10][notice]start upload.
+[2021-06-27 20:14:10][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:10 MB
+[2021-06-27 20:14:10][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:12582912
+[2021-06-27 20:14:10][notice]continue size:12582912 size1:28552147
+[2021-06-27 20:14:15][notice]start upload.
+[2021-06-27 20:14:15][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:12 MB
+[2021-06-27 20:14:15][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:14680064
+[2021-06-27 20:14:15][notice]continue size:14680064 size1:28552147
+[2021-06-27 20:14:21][notice]start upload.
+[2021-06-27 20:14:21][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:14 MB
+[2021-06-27 20:14:21][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:16777216
+[2021-06-27 20:14:21][notice]continue size:16777216 size1:28552147
+[2021-06-27 20:14:26][notice]start upload.
+[2021-06-27 20:14:26][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:16 MB
+[2021-06-27 20:14:27][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:18874368
+[2021-06-27 20:14:27][notice]continue size:18874368 size1:28552147
+[2021-06-27 20:14:35][notice]start upload.
+[2021-06-27 20:14:35][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:18 MB
+[2021-06-27 20:14:40][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:20971520
+[2021-06-27 20:14:40][notice]continue size:20971520 size1:28552147
+[2021-06-27 20:14:45][notice]start upload.
+[2021-06-27 20:14:45][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:20 MB
+[2021-06-27 20:14:45][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:23068672
+[2021-06-27 20:14:45][notice]continue size:23068672 size1:28552147
+[2021-06-27 20:14:50][notice]start upload.
+[2021-06-27 20:14:50][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:22 MB
+[2021-06-27 20:14:51][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:25165824
+[2021-06-27 20:14:51][notice]continue size:25165824 size1:28552147
+[2021-06-27 20:14:56][notice]start upload.
+[2021-06-27 20:14:56][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:24 MB
+[2021-06-27 20:14:56][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:27262976
+[2021-06-27 20:14:56][notice]continue size:27262976 size1:28552147
+[2021-06-27 20:15:00][notice]start upload.
+[2021-06-27 20:15:00][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip offset:26 MB
+[2021-06-27 20:15:00][notice]Write file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip success size:28552147
+[2021-06-27 20:15:00][notice]rename temp file:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid_temp-60d8dbd157e85_2021-06-27-20-13_backup_all.zip to new name:/home/shavenge/eventapna.com/wp-content/wpvividbackups/test1.eventap1.in10.fcomet.com_wpvivid-60d8dbd157e85_2021-06-27-20-13_backup_all.zip

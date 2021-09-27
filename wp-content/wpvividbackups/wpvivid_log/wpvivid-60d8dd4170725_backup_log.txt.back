@@ -1,0 +1,505 @@
+Log created: 2021-06-27 20:19:13
+Type: backup
+[2021-06-27 20:19:39][notice]Start backing up.
+[2021-06-27 20:19:39][notice]server info fcgi:Off max execution time: 900 wp version:5.7.2 php version:7.3.28 db version:5.7.34 php ini:safe_mode: memory_limit:256M memory_get_usage:24.81 MB memory_get_peak_usage:24.93 MB extensions:PDO enabled curl enabled zlib enabled   is_multisite:0
+[2021-06-27 20:19:39][notice]Prepare to backup backup_db files.
+[2021-06-27 20:19:39][notice]Start exporting database.
+[2021-06-27 20:19:39][notice]Preparing to dump table wpmg_actionscheduler_actions
+[2021-06-27 20:19:39][notice]Preparing to dump table wpmg_actionscheduler_claims
+[2021-06-27 20:19:39][notice]Preparing to dump table wpmg_actionscheduler_groups
+[2021-06-27 20:19:39][notice]Preparing to dump table wpmg_actionscheduler_logs
+[2021-06-27 20:19:40][notice]Preparing to dump table wpmg_commentmeta
+[2021-06-27 20:19:40][notice]Preparing to dump table wpmg_comments
+[2021-06-27 20:19:41][notice]Preparing to dump table wpmg_fbv
+[2021-06-27 20:19:41][notice]Preparing to dump table wpmg_fbv_attachment_folder
+[2021-06-27 20:19:41][notice]Preparing to dump table wpmg_links
+[2021-06-27 20:19:41][notice]Preparing to dump table wpmg_options
+[2021-06-27 20:19:42][notice]Preparing to dump table wpmg_postmeta
+[2021-06-27 20:20:00][notice]Preparing to dump table wpmg_posts
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_css
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_css_bkp
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_layer_animations
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_layer_animations_bkp
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_navigations
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_navigations_bkp
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_sliders
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_sliders_bkp
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_slides
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_slides_bkp
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_static_slides
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_revslider_static_slides_bkp
+[2021-06-27 20:20:04][notice]Preparing to dump table wpmg_term_relationships
+[2021-06-27 20:20:05][notice]Preparing to dump table wpmg_term_taxonomy
+[2021-06-27 20:20:05][notice]Preparing to dump table wpmg_termmeta
+[2021-06-27 20:20:05][notice]Preparing to dump table wpmg_terms
+[2021-06-27 20:20:06][notice]Preparing to dump table wpmg_usermeta
+[2021-06-27 20:20:06][notice]Preparing to dump table wpmg_users
+[2021-06-27 20:20:06][notice]Preparing to dump table wpmg_wc_admin_note_actions
+[2021-06-27 20:20:06][notice]Preparing to dump table wpmg_wc_admin_notes
+[2021-06-27 20:20:06][notice]Preparing to dump table wpmg_wc_category_lookup
+[2021-06-27 20:20:06][notice]Preparing to dump table wpmg_wc_customer_lookup
+[2021-06-27 20:20:06][notice]Preparing to dump table wpmg_wc_download_log
+[2021-06-27 20:20:06][notice]Preparing to dump table wpmg_wc_order_coupon_lookup
+[2021-06-27 20:20:06][notice]Preparing to dump table wpmg_wc_order_product_lookup
+[2021-06-27 20:20:06][notice]Preparing to dump table wpmg_wc_order_stats
+[2021-06-27 20:20:07][notice]Preparing to dump table wpmg_wc_order_tax_lookup
+[2021-06-27 20:20:07][notice]Preparing to dump table wpmg_wc_product_meta_lookup
+[2021-06-27 20:20:07][notice]Preparing to dump table wpmg_wc_reserved_stock
+[2021-06-27 20:20:07][notice]Preparing to dump table wpmg_wc_tax_rate_classes
+[2021-06-27 20:20:07][notice]Preparing to dump table wpmg_wc_webhooks
+[2021-06-27 20:20:07][notice]Preparing to dump table wpmg_wcfm_daily_analysis
+[2021-06-27 20:20:08][notice]Preparing to dump table wpmg_wcfm_delivery_orders
+[2021-06-27 20:20:08][notice]Preparing to dump table wpmg_wcfm_delivery_orders_meta
+[2021-06-27 20:20:08][notice]Preparing to dump table wpmg_wcfm_detailed_analysis
+[2021-06-27 20:20:10][notice]Preparing to dump table wpmg_wcfm_enquiries
+[2021-06-27 20:20:10][notice]Preparing to dump table wpmg_wcfm_enquiries_meta
+[2021-06-27 20:20:10][notice]Preparing to dump table wpmg_wcfm_enquiries_response
+[2021-06-27 20:20:10][notice]Preparing to dump table wpmg_wcfm_enquiries_response_meta
+[2021-06-27 20:20:10][notice]Preparing to dump table wpmg_wcfm_fbc_chat_rows
+[2021-06-27 20:20:10][notice]Preparing to dump table wpmg_wcfm_fbc_chat_sessions
+[2021-06-27 20:20:10][notice]Preparing to dump table wpmg_wcfm_fbc_chat_visitors
+[2021-06-27 20:20:10][notice]Preparing to dump table wpmg_wcfm_fbc_offline_messages
+[2021-06-27 20:20:10][notice]Preparing to dump table wpmg_wcfm_following_followers
+[2021-06-27 20:20:10][notice]Preparing to dump table wpmg_wcfm_marketplace_orders
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_orders_meta
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_product_multivendor
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_refund_request
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_refund_request_meta
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_reverse_withdrawal
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_reverse_withdrawal_meta
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_review_rating_meta
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_reviews
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_reviews_response
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_reviews_response_meta
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_shipping_zone_locations
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_shipping_zone_methods
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_store_taxonomies
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_vendor_ledger
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_withdraw_request
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_marketplace_withdraw_request_meta
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_membership_subscription
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_messages
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_messages_modifier
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_messages_stat
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_support
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_support_meta
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_support_response
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcfm_support_response_meta
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wcpdf_invoice_number
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_wfpklist_template_data
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_woocommerce_api_keys
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_woocommerce_attribute_taxonomies
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_woocommerce_downloadable_product_permissions
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_woocommerce_log
+[2021-06-27 20:20:11][notice]Preparing to dump table wpmg_woocommerce_order_itemmeta
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_woocommerce_order_items
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_woocommerce_payment_tokenmeta
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_woocommerce_payment_tokens
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_woocommerce_sessions
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_woocommerce_shipping_zone_locations
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_woocommerce_shipping_zone_methods
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_woocommerce_shipping_zones
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_woocommerce_tax_rate_locations
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_woocommerce_tax_rates
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_wpfm_backup
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_wpvivid_scan_result
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_wpvivid_unused_uploads_files
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_yith_wcwl
+[2021-06-27 20:20:12][notice]Preparing to dump table wpmg_yith_wcwl_lists
+[2021-06-27 20:20:12][notice]Exporting database finished.
+[2021-06-27 20:20:12][notice]Start compressing backup_db
+[2021-06-27 20:20:12][notice]Prepare to zip files. file: eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_db.zip
+[2021-06-27 20:20:14][notice]Adding zip files completed.eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_db.zip, filesize: 2.32 MB
+[2021-06-27 20:20:14][notice]Compressing backup_db completed
+[2021-06-27 20:20:14][notice]Backing up backup_db completed.
+[2021-06-27 20:20:14][notice]Prepare to backup backup_themes files.
+[2021-06-27 20:20:14][notice]File number: 664
+[2021-06-27 20:20:14][notice]Start compressing backup_themes
+[2021-06-27 20:20:14][notice]Prepare to zip files. file: eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_themes.zip
+[2021-06-27 20:20:35][notice]Adding zip files completed.eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_themes.zip, filesize: 20.40 MB
+[2021-06-27 20:20:35][notice]Compressing backup_themes completed
+[2021-06-27 20:20:35][notice]Backing up backup_themes completed.
+[2021-06-27 20:20:35][notice]Prepare to backup backup_plugin files.
+[2021-06-27 20:20:35][notice]File number: 20401
+[2021-06-27 20:20:35][notice]Start compressing backup_plugin
+[2021-06-27 20:20:36][notice]Prepare to zip files. file: eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_plugin.part001.zip
+[2021-06-27 20:24:45][notice]Adding zip files completed.eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_plugin.part001.zip, filesize: 200.20 MB
+[2021-06-27 20:24:45][notice]Prepare to zip files. file: eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_plugin.part002.zip
+[2021-06-27 20:26:55][notice]Adding zip files completed.eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_plugin.part002.zip, filesize: 114.43 MB
+[2021-06-27 20:26:55][notice]Compressing backup_plugin completed
+[2021-06-27 20:26:55][notice]Backing up backup_plugin completed.
+[2021-06-27 20:26:55][notice]Prepare to backup backup_uploads files.
+[2021-06-27 20:26:55][notice]File number: 986
+[2021-06-27 20:26:55][notice]Start compressing backup_uploads
+[2021-06-27 20:26:55][notice]Prepare to zip files. file: eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_uploads.zip
+[2021-06-27 20:28:49][notice]Adding zip files completed.eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_uploads.zip, filesize: 112.94 MB
+[2021-06-27 20:28:49][notice]Compressing backup_uploads completed
+[2021-06-27 20:28:49][notice]Backing up backup_uploads completed.
+[2021-06-27 20:28:49][notice]Prepare to backup backup_content files.
+[2021-06-27 20:28:49][notice]File number: 214
+[2021-06-27 20:28:49][notice]Start compressing backup_content
+[2021-06-27 20:28:49][notice]Prepare to zip files. file: eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_content.zip
+[2021-06-27 20:31:11][notice]Adding zip files completed.eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_content.zip, filesize: 140.69 MB
+[2021-06-27 20:31:11][notice]Compressing backup_content completed
+[2021-06-27 20:31:11][notice]Backing up backup_content completed.
+[2021-06-27 20:31:11][notice]Prepare to backup backup_core files.
+[2021-06-27 20:31:11][notice]File number: 1828
+[2021-06-27 20:31:11][notice]Start compressing backup_core
+[2021-06-27 20:31:11][notice]Prepare to zip files. file: eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_core.zip
+[2021-06-27 20:31:54][notice]Adding zip files completed.eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_core.zip, filesize: 44.02 MB
+[2021-06-27 20:31:54][notice]Compressing backup_core completed
+[2021-06-27 20:31:54][notice]Backing up backup_core completed.
+[2021-06-27 20:31:54][notice]Prepare to backup backup_merge files.
+[2021-06-27 20:31:54][notice]File number: 7
+[2021-06-27 20:31:54][notice]Start compressing backup_merge
+[2021-06-27 20:31:54][notice]Prepare to zip files. file: eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip
+[2021-06-27 20:34:43][notice]Adding zip files completed.eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip, filesize: 69.42 MB
+[2021-06-27 20:34:43][notice]Cleaned up file, filename: /home/shavenge/eventapna.com/wp-content/wpvividbackups/eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_plugin.part001.zip
+[2021-06-27 20:34:43][notice]Prepare to zip files. file: eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip
+[2021-06-27 20:35:35][notice]Adding zip files completed.eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip, filesize: 24.12 MB
+[2021-06-27 20:35:35][notice]Cleaned up file, filename: /home/shavenge/eventapna.com/wp-content/wpvividbackups/eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_content.zip
+[2021-06-27 20:35:35][notice]Prepare to zip files. file: eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip
+[2021-06-27 20:37:03][notice]Adding zip files completed.eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip, filesize: 31.00 MB
+[2021-06-27 20:37:03][notice]Cleaned up file, filename: /home/shavenge/eventapna.com/wp-content/wpvividbackups/eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_plugin.part002.zip
+[2021-06-27 20:37:03][notice]Prepare to zip files. file: eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip
+[2021-06-27 20:40:27][notice]Adding zip files completed.eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip, filesize: 111.52 MB
+[2021-06-27 20:40:27][notice]Cleaned up file, filename: /home/shavenge/eventapna.com/wp-content/wpvividbackups/eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_uploads.zip
+[2021-06-27 20:40:27][notice]Cleaned up file, filename: /home/shavenge/eventapna.com/wp-content/wpvividbackups/eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_core.zip
+[2021-06-27 20:40:27][notice]Cleaned up file, filename: /home/shavenge/eventapna.com/wp-content/wpvividbackups/eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_themes.zip
+[2021-06-27 20:40:27][notice]Cleaned up file, filename: /home/shavenge/eventapna.com/wp-content/wpvividbackups/eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_db.zip
+[2021-06-27 20:40:27][notice]Compressing backup_merge completed
+[2021-06-27 20:40:27][notice]Backing up backup_merge completed.
+[2021-06-27 20:40:27][notice]Backup completed.
+[2021-06-27 20:40:27][notice]Backup succeeded.
+[2021-06-27 20:40:27][notice]Start upload.
+[2021-06-27 20:40:27][notice]Connect site 
+[2021-06-27 20:40:28][notice]Start uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip
+[2021-06-27 20:40:52][notice]{"result":"success","file_status":{"status":"start"}}
+[2021-06-27 20:40:52][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 0
+[2021-06-27 20:40:55][notice]finished send chunk
+[2021-06-27 20:40:55][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 2.00 MB speed:77.67kb/s
+[2021-06-27 20:40:55][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 2097152
+[2021-06-27 20:40:58][notice]finished send chunk
+[2021-06-27 20:40:58][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 4194304
+[2021-06-27 20:41:02][notice]finished send chunk
+[2021-06-27 20:41:02][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 6.00 MB speed:599.19kb/s
+[2021-06-27 20:41:02][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 6291456
+[2021-06-27 20:41:05][notice]finished send chunk
+[2021-06-27 20:41:05][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 8388608
+[2021-06-27 20:41:08][notice]finished send chunk
+[2021-06-27 20:41:08][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 10.00 MB speed:699.05kb/s
+[2021-06-27 20:41:08][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 10485760
+[2021-06-27 20:41:12][notice]finished send chunk
+[2021-06-27 20:41:12][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 12.00 MB speed:524.29kb/s
+[2021-06-27 20:41:12][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 12582912
+[2021-06-27 20:41:16][notice]finished send chunk
+[2021-06-27 20:41:16][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 14.00 MB speed:524.29kb/s
+[2021-06-27 20:41:16][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 14680064
+[2021-06-27 20:41:19][notice]finished send chunk
+[2021-06-27 20:41:19][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 16777216
+[2021-06-27 20:41:22][notice]finished send chunk
+[2021-06-27 20:41:22][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 18.00 MB speed:699.05kb/s
+[2021-06-27 20:41:22][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 18874368
+[2021-06-27 20:41:26][notice]finished send chunk
+[2021-06-27 20:41:26][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 20.00 MB speed:524.29kb/s
+[2021-06-27 20:41:26][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 20971520
+[2021-06-27 20:41:30][notice]finished send chunk
+[2021-06-27 20:41:30][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 22.00 MB speed:524.29kb/s
+[2021-06-27 20:41:30][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 23068672
+[2021-06-27 20:41:33][notice]finished send chunk
+[2021-06-27 20:41:33][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 25165824
+[2021-06-27 20:41:37][notice]finished send chunk
+[2021-06-27 20:41:37][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 26.00 MB speed:599.19kb/s
+[2021-06-27 20:41:37][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 27262976
+[2021-06-27 20:41:40][notice]finished send chunk
+[2021-06-27 20:41:40][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 29360128
+[2021-06-27 20:41:44][notice]finished send chunk
+[2021-06-27 20:41:44][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 30.00 MB speed:599.19kb/s
+[2021-06-27 20:41:44][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 31457280
+[2021-06-27 20:41:47][notice]finished send chunk
+[2021-06-27 20:41:47][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 33554432
+[2021-06-27 20:41:50][notice]finished send chunk
+[2021-06-27 20:41:50][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 34.00 MB speed:699.05kb/s
+[2021-06-27 20:41:51][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 35651584
+[2021-06-27 20:41:54][notice]finished send chunk
+[2021-06-27 20:41:54][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 36.00 MB speed:524.29kb/s
+[2021-06-27 20:41:54][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 37748736
+[2021-06-27 20:41:57][notice]finished send chunk
+[2021-06-27 20:41:57][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 39845888
+[2021-06-27 20:42:01][notice]finished send chunk
+[2021-06-27 20:42:01][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 40.00 MB speed:599.19kb/s
+[2021-06-27 20:42:02][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 41943040
+[2021-06-27 20:42:05][notice]finished send chunk
+[2021-06-27 20:42:05][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 42.00 MB speed:524.29kb/s
+[2021-06-27 20:42:05][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 44040192
+[2021-06-27 20:42:09][notice]finished send chunk
+[2021-06-27 20:42:09][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 44.00 MB speed:524.29kb/s
+[2021-06-27 20:42:09][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 46137344
+[2021-06-27 20:42:12][notice]finished send chunk
+[2021-06-27 20:42:12][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 48234496
+[2021-06-27 20:42:16][notice]finished send chunk
+[2021-06-27 20:42:16][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 48.00 MB speed:599.19kb/s
+[2021-06-27 20:42:16][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 50331648
+[2021-06-27 20:42:19][notice]finished send chunk
+[2021-06-27 20:42:19][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 52428800
+[2021-06-27 20:42:23][notice]finished send chunk
+[2021-06-27 20:42:23][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 52.00 MB speed:599.19kb/s
+[2021-06-27 20:42:23][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 54525952
+[2021-06-27 20:42:26][notice]finished send chunk
+[2021-06-27 20:42:26][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 56623104
+[2021-06-27 20:42:29][notice]finished send chunk
+[2021-06-27 20:42:29][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 56.00 MB speed:699.05kb/s
+[2021-06-27 20:42:29][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 58720256
+[2021-06-27 20:42:32][notice]finished send chunk
+[2021-06-27 20:42:32][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 60817408
+[2021-06-27 20:42:36][notice]finished send chunk
+[2021-06-27 20:42:36][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 60.00 MB speed:599.19kb/s
+[2021-06-27 20:42:36][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 62914560
+[2021-06-27 20:42:39][notice]finished send chunk
+[2021-06-27 20:42:39][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 65011712
+[2021-06-27 20:42:43][notice]finished send chunk
+[2021-06-27 20:42:43][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 64.00 MB speed:599.19kb/s
+[2021-06-27 20:42:43][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 67108864
+[2021-06-27 20:42:46][notice]finished send chunk
+[2021-06-27 20:42:46][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 69206016
+[2021-06-27 20:42:49][notice]finished send chunk
+[2021-06-27 20:42:49][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 68.00 MB speed:699.05kb/s
+[2021-06-27 20:42:49][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip offset 71303168
+[2021-06-27 20:42:53][notice]finished send chunk
+[2021-06-27 20:42:53][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part001.zip Total size: 69.42 MB Uploaded: 69.42 MB speed:371.04kb/s
+[2021-06-27 20:42:53][notice]upload finished
+[2021-06-27 20:42:53][notice]Start uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip
+[2021-06-27 20:43:02][notice]{"result":"success","file_status":{"status":"start"}}
+[2021-06-27 20:43:02][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 0
+[2021-06-27 20:43:05][notice]finished send chunk
+[2021-06-27 20:43:05][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip Total size: 24.12 MB Uploaded: 2.00 MB speed:174.76kb/s
+[2021-06-27 20:43:05][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 2097152
+[2021-06-27 20:43:08][notice]finished send chunk
+[2021-06-27 20:43:08][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 4194304
+[2021-06-27 20:43:12][notice]finished send chunk
+[2021-06-27 20:43:12][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip Total size: 24.12 MB Uploaded: 6.00 MB speed:599.19kb/s
+[2021-06-27 20:43:12][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 6291456
+[2021-06-27 20:43:15][notice]finished send chunk
+[2021-06-27 20:43:15][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 8388608
+[2021-06-27 20:43:18][notice]finished send chunk
+[2021-06-27 20:43:18][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip Total size: 24.12 MB Uploaded: 10.00 MB speed:699.05kb/s
+[2021-06-27 20:43:18][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 10485760
+[2021-06-27 20:43:22][notice]finished send chunk
+[2021-06-27 20:43:22][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip Total size: 24.12 MB Uploaded: 12.00 MB speed:524.29kb/s
+[2021-06-27 20:43:22][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 12582912
+[2021-06-27 20:43:26][notice]finished send chunk
+[2021-06-27 20:43:26][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip Total size: 24.12 MB Uploaded: 14.00 MB speed:524.29kb/s
+[2021-06-27 20:43:26][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 14680064
+[2021-06-27 20:43:32][notice]finished send chunk
+[2021-06-27 20:43:32][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip Total size: 24.12 MB Uploaded: 16.00 MB speed:349.53kb/s
+[2021-06-27 20:43:32][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 16777216
+[2021-06-27 20:43:36][notice]finished send chunk
+[2021-06-27 20:43:36][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip Total size: 24.12 MB Uploaded: 18.00 MB speed:524.29kb/s
+[2021-06-27 20:43:36][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 18874368
+[2021-06-27 20:43:40][notice]finished send chunk
+[2021-06-27 20:43:40][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip Total size: 24.12 MB Uploaded: 20.00 MB speed:524.29kb/s
+[2021-06-27 20:43:40][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 20971520
+[2021-06-27 20:43:43][notice]finished send chunk
+[2021-06-27 20:43:43][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 23068672
+[2021-06-27 20:43:47][notice]finished send chunk
+[2021-06-27 20:43:47][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip Total size: 24.12 MB Uploaded: 24.00 MB speed:599.19kb/s
+[2021-06-27 20:43:47][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part002.zip offset 25165824
+[2021-06-27 20:43:48][notice]finished send chunk
+[2021-06-27 20:43:48][notice]upload finished
+[2021-06-27 20:43:48][notice]Start uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip
+[2021-06-27 20:44:00][notice]{"result":"success","file_status":{"status":"start"}}
+[2021-06-27 20:44:00][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 0
+[2021-06-27 20:44:04][notice]finished send chunk
+[2021-06-27 20:44:04][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip Total size: 31.00 MB Uploaded: 2.00 MB speed:131.07kb/s
+[2021-06-27 20:44:04][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 2097152
+[2021-06-27 20:44:07][notice]finished send chunk
+[2021-06-27 20:44:07][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 4194304
+[2021-06-27 20:44:10][notice]finished send chunk
+[2021-06-27 20:44:10][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip Total size: 31.00 MB Uploaded: 6.00 MB speed:699.05kb/s
+[2021-06-27 20:44:10][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 6291456
+[2021-06-27 20:44:14][notice]finished send chunk
+[2021-06-27 20:44:14][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip Total size: 31.00 MB Uploaded: 8.00 MB speed:524.29kb/s
+[2021-06-27 20:44:14][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 8388608
+[2021-06-27 20:44:17][notice]finished send chunk
+[2021-06-27 20:44:17][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 10485760
+[2021-06-27 20:44:21][notice]finished send chunk
+[2021-06-27 20:44:21][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip Total size: 31.00 MB Uploaded: 12.00 MB speed:599.19kb/s
+[2021-06-27 20:44:21][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 12582912
+[2021-06-27 20:44:24][notice]finished send chunk
+[2021-06-27 20:44:24][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 14680064
+[2021-06-27 20:44:28][notice]finished send chunk
+[2021-06-27 20:44:28][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip Total size: 31.00 MB Uploaded: 16.00 MB speed:599.19kb/s
+[2021-06-27 20:44:28][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 16777216
+[2021-06-27 20:44:31][notice]finished send chunk
+[2021-06-27 20:44:31][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 18874368
+[2021-06-27 20:44:34][notice]finished send chunk
+[2021-06-27 20:44:34][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip Total size: 31.00 MB Uploaded: 20.00 MB speed:699.05kb/s
+[2021-06-27 20:44:34][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 20971520
+[2021-06-27 20:44:37][notice]finished send chunk
+[2021-06-27 20:44:37][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 23068672
+[2021-06-27 20:44:41][notice]finished send chunk
+[2021-06-27 20:44:41][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip Total size: 31.00 MB Uploaded: 24.00 MB speed:599.19kb/s
+[2021-06-27 20:44:41][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 25165824
+[2021-06-27 20:44:44][notice]finished send chunk
+[2021-06-27 20:44:44][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 27262976
+[2021-06-27 20:44:47][notice]finished send chunk
+[2021-06-27 20:44:47][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip Total size: 31.00 MB Uploaded: 28.00 MB speed:699.05kb/s
+[2021-06-27 20:44:47][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 29360128
+[2021-06-27 20:44:51][notice]finished send chunk
+[2021-06-27 20:44:51][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip Total size: 31.00 MB Uploaded: 30.00 MB speed:524.29kb/s
+[2021-06-27 20:44:51][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part003.zip offset 31457280
+[2021-06-27 20:44:54][notice]finished send chunk
+[2021-06-27 20:44:54][notice]upload finished
+[2021-06-27 20:44:54][notice]Start uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip
+[2021-06-27 20:45:09][notice]{"result":"success","file_status":{"status":"start"}}
+[2021-06-27 20:45:09][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 0
+[2021-06-27 20:45:13][notice]finished send chunk
+[2021-06-27 20:45:13][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 2.00 MB speed:110.38kb/s
+[2021-06-27 20:45:13][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 2097152
+[2021-06-27 20:45:16][notice]finished send chunk
+[2021-06-27 20:45:16][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 4194304
+[2021-06-27 20:45:19][notice]finished send chunk
+[2021-06-27 20:45:19][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 6.00 MB speed:699.05kb/s
+[2021-06-27 20:45:19][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 6291456
+[2021-06-27 20:45:23][notice]finished send chunk
+[2021-06-27 20:45:23][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 8.00 MB speed:524.29kb/s
+[2021-06-27 20:45:23][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 8388608
+[2021-06-27 20:45:26][notice]finished send chunk
+[2021-06-27 20:45:27][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 10.00 MB speed:524.29kb/s
+[2021-06-27 20:45:27][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 10485760
+[2021-06-27 20:45:30][notice]finished send chunk
+[2021-06-27 20:45:30][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 12582912
+[2021-06-27 20:45:33][notice]finished send chunk
+[2021-06-27 20:45:33][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 14.00 MB speed:699.05kb/s
+[2021-06-27 20:45:33][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 14680064
+[2021-06-27 20:45:37][notice]finished send chunk
+[2021-06-27 20:45:37][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 16.00 MB speed:524.29kb/s
+[2021-06-27 20:45:37][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 16777216
+[2021-06-27 20:45:40][notice]finished send chunk
+[2021-06-27 20:45:40][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 18874368
+[2021-06-27 20:45:43][notice]finished send chunk
+[2021-06-27 20:45:44][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 20.00 MB speed:599.19kb/s
+[2021-06-27 20:45:44][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 20971520
+[2021-06-27 20:45:47][notice]finished send chunk
+[2021-06-27 20:45:47][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 23068672
+[2021-06-27 20:45:50][notice]finished send chunk
+[2021-06-27 20:45:50][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 24.00 MB speed:699.05kb/s
+[2021-06-27 20:45:50][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 25165824
+[2021-06-27 20:45:53][notice]finished send chunk
+[2021-06-27 20:45:53][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 27262976
+[2021-06-27 20:45:57][notice]finished send chunk
+[2021-06-27 20:45:57][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 28.00 MB speed:599.19kb/s
+[2021-06-27 20:45:57][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 29360128
+[2021-06-27 20:46:00][notice]finished send chunk
+[2021-06-27 20:46:00][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 31457280
+[2021-06-27 20:46:03][notice]finished send chunk
+[2021-06-27 20:46:03][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 32.00 MB speed:699.05kb/s
+[2021-06-27 20:46:03][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 33554432
+[2021-06-27 20:46:07][notice]finished send chunk
+[2021-06-27 20:46:07][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 34.00 MB speed:524.29kb/s
+[2021-06-27 20:46:07][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 35651584
+[2021-06-27 20:46:10][notice]finished send chunk
+[2021-06-27 20:46:10][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 37748736
+[2021-06-27 20:46:14][notice]finished send chunk
+[2021-06-27 20:46:14][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 38.00 MB speed:599.19kb/s
+[2021-06-27 20:46:14][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 39845888
+[2021-06-27 20:46:17][notice]finished send chunk
+[2021-06-27 20:46:17][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 41943040
+[2021-06-27 20:46:21][notice]finished send chunk
+[2021-06-27 20:46:21][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 42.00 MB speed:599.19kb/s
+[2021-06-27 20:46:21][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 44040192
+[2021-06-27 20:46:24][notice]finished send chunk
+[2021-06-27 20:46:24][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 46137344
+[2021-06-27 20:46:28][notice]finished send chunk
+[2021-06-27 20:46:28][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 46.00 MB speed:599.19kb/s
+[2021-06-27 20:46:28][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 48234496
+[2021-06-27 20:46:31][notice]finished send chunk
+[2021-06-27 20:46:31][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 50331648
+[2021-06-27 20:46:35][notice]finished send chunk
+[2021-06-27 20:46:35][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 50.00 MB speed:599.19kb/s
+[2021-06-27 20:46:35][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 52428800
+[2021-06-27 20:46:38][notice]finished send chunk
+[2021-06-27 20:46:38][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 54525952
+[2021-06-27 20:46:42][notice]finished send chunk
+[2021-06-27 20:46:42][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 54.00 MB speed:599.19kb/s
+[2021-06-27 20:46:42][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 56623104
+[2021-06-27 20:46:46][notice]finished send chunk
+[2021-06-27 20:46:46][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 56.00 MB speed:524.29kb/s
+[2021-06-27 20:46:47][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 58720256
+[2021-06-27 20:46:50][notice]finished send chunk
+[2021-06-27 20:46:50][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 58.00 MB speed:524.29kb/s
+[2021-06-27 20:46:51][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 60817408
+[2021-06-27 20:46:55][notice]finished send chunk
+[2021-06-27 20:46:55][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 60.00 MB speed:419.43kb/s
+[2021-06-27 20:46:56][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 62914560
+[2021-06-27 20:46:59][notice]finished send chunk
+[2021-06-27 20:46:59][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 62.00 MB speed:524.29kb/s
+[2021-06-27 20:46:59][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 65011712
+[2021-06-27 20:47:02][notice]finished send chunk
+[2021-06-27 20:47:02][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 67108864
+[2021-06-27 20:47:06][notice]finished send chunk
+[2021-06-27 20:47:06][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 66.00 MB speed:599.19kb/s
+[2021-06-27 20:47:06][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 69206016
+[2021-06-27 20:47:10][notice]finished send chunk
+[2021-06-27 20:47:10][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 68.00 MB speed:524.29kb/s
+[2021-06-27 20:47:10][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 71303168
+[2021-06-27 20:47:13][notice]finished send chunk
+[2021-06-27 20:47:13][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 73400320
+[2021-06-27 20:47:17][notice]finished send chunk
+[2021-06-27 20:47:17][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 72.00 MB speed:599.19kb/s
+[2021-06-27 20:47:17][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 75497472
+[2021-06-27 20:47:20][notice]finished send chunk
+[2021-06-27 20:47:20][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 77594624
+[2021-06-27 20:47:24][notice]finished send chunk
+[2021-06-27 20:47:24][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 76.00 MB speed:599.19kb/s
+[2021-06-27 20:47:24][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 79691776
+[2021-06-27 20:47:27][notice]finished send chunk
+[2021-06-27 20:47:27][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 81788928
+[2021-06-27 20:47:30][notice]finished send chunk
+[2021-06-27 20:47:30][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 80.00 MB speed:699.05kb/s
+[2021-06-27 20:47:30][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 83886080
+[2021-06-27 20:47:34][notice]finished send chunk
+[2021-06-27 20:47:34][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 82.00 MB speed:524.29kb/s
+[2021-06-27 20:47:34][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 85983232
+[2021-06-27 20:47:37][notice]finished send chunk
+[2021-06-27 20:47:37][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 88080384
+[2021-06-27 20:47:41][notice]finished send chunk
+[2021-06-27 20:47:41][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 86.00 MB speed:599.19kb/s
+[2021-06-27 20:47:41][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 90177536
+[2021-06-27 20:47:44][notice]finished send chunk
+[2021-06-27 20:47:44][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 92274688
+[2021-06-27 20:47:47][notice]finished send chunk
+[2021-06-27 20:47:47][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 90.00 MB speed:699.05kb/s
+[2021-06-27 20:47:47][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 94371840
+[2021-06-27 20:47:51][notice]finished send chunk
+[2021-06-27 20:47:51][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 92.00 MB speed:524.29kb/s
+[2021-06-27 20:47:51][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 96468992
+[2021-06-27 20:47:55][notice]finished send chunk
+[2021-06-27 20:47:55][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 94.00 MB speed:524.29kb/s
+[2021-06-27 20:47:55][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 98566144
+[2021-06-27 20:47:58][notice]finished send chunk
+[2021-06-27 20:47:58][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 100663296
+[2021-06-27 20:48:02][notice]finished send chunk
+[2021-06-27 20:48:02][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 98.00 MB speed:599.19kb/s
+[2021-06-27 20:48:02][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 102760448
+[2021-06-27 20:48:05][notice]finished send chunk
+[2021-06-27 20:48:05][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 104857600
+[2021-06-27 20:48:08][notice]finished send chunk
+[2021-06-27 20:48:08][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 102.00 MB speed:699.05kb/s
+[2021-06-27 20:48:08][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 106954752
+[2021-06-27 20:48:12][notice]finished send chunk
+[2021-06-27 20:48:12][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 104.00 MB speed:524.29kb/s
+[2021-06-27 20:48:12][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 109051904
+[2021-06-27 20:48:15][notice]finished send chunk
+[2021-06-27 20:48:15][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 111149056
+[2021-06-27 20:48:19][notice]finished send chunk
+[2021-06-27 20:48:19][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 108.00 MB speed:599.19kb/s
+[2021-06-27 20:48:19][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 113246208
+[2021-06-27 20:48:22][notice]finished send chunk
+[2021-06-27 20:48:22][notice]send chunk eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip offset 115343360
+[2021-06-27 20:48:26][notice]finished send chunk
+[2021-06-27 20:48:26][notice]Uploading eventapna.com_wpvivid-60d8dd4170725_2021-06-28-01-19_backup_all.part004.zip Total size: 111.52 MB Uploaded: 111.52 MB speed:527.48kb/s
+[2021-06-27 20:48:26][notice]upload finished
+[2021-06-27 20:48:27][notice]Cleaned up local files after uploading to remote storages.
+[2021-06-27 20:48:27][notice]Upload succeeded.
+[2021-06-27 20:48:27][notice]Upload finished. Delete task wpvivid-60d8dd4170725
